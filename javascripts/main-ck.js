@@ -1,0 +1,1 @@
+$("body, html").removeClass("no-js");require(["jquery","knockout-2.1.0","knockout.mapping","jquery.hotkeys","plugins"],function(e,t,n){function r(e){var n=this;viewModel=t.mapping.fromJS(e)}t.mapping=n;e(function(){})});

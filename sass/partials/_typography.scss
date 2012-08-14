@@ -1,0 +1,17 @@
+body{
+	font-family:"PT SANS", Helvetica, sans-serif;
+	color:$text;
+}
+.post-title{
+	font-family:Rokkitt, Georgia, serif;
+}
+a{
+	text-decoration:none;
+	font-weight:bold;
+	&:link, &:visited, &:active{
+		color:$red;
+	}
+	&:hover{
+		color:black;
+	}
+}

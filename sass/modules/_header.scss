@@ -1,0 +1,11 @@
+.header{
+	background:$header-bg;
+	margin-bottom:$grid-margin;
+	height:$grid-unit;
+	.nav{
+		@include horizontal-list-container;
+		li{
+			@include horizontal-list-item;
+		}
+	}
+}
