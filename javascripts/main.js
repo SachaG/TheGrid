@@ -1,5 +1,13 @@
 $("body, html").removeClass("no-js");
 
+var debug=true;
+
+cLog=function(s){
+  if(debug){
+    console.log(s);
+  }
+};
+
 function get_hostname(url) {
 	var m = ((url||'')+'').match(/^http:\/\/[^/]+/);
 	return m ? m[0].substr(7) : null;
@@ -18,8 +26,7 @@ require([
 	"knockout.mapping",
 	"knockout.mustache",
 	"appViewModel",
-	"jquery.hotkeys", 
-	"plugins"
+	"jquery.hotkeys"
 ], function(
 	$, 
 	mustache,
@@ -29,16 +36,15 @@ require([
 	appViewModel
 ) {
 	//---------------------------------------- Knockout Stuff ---------------------------------------//
-
-
-		ko.mapping=mapping;
-
-
+	ko.setTemplateEngine(new mustacheTemplateEngine());
 
 		//---------------------------------------- Start Main jQuery Document Ready ---------------------------------------//
 		$(function() {
 			$.when($.getJSON(postsURL)).then(function(posts){
-				ko.applyBindings(new appViewModel(posts));	
+				console.log("json loaded!");
+				allPosts=new appViewModel(posts);
+				cLog(allPosts);
+				ko.applyBindings(allPosts);
 			});
 		});
 });
