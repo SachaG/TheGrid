@@ -26,21 +26,21 @@
           </li>
           <li class='post-upvote'>
             <a class='upvote-link' href='#'>
-              <span class='points' data-bind='text:points()'></span>
+              <span class='points'>{{points}}</span>
               <span class='action'>Upvote</span>
             </a>
           </li>
         </ul>
         <div class='post-content'>
-          <span class='post-rank' data-bind='text:($index()+1)+"."'></span>
+          <span class='post-rank'>{{getIndex}}.</span>
           <h3 class='post-heading'>
-            <a class='post-title' data-bind='text:title(), attr:{href:url()}' target='_blank'></a>
-            <span class='post-domain' data-bind='text:getDomain()'></span>
+            <a class='post-title' href='{{url}}' target='_blank'>{{title}}</a>
+            <span class='post-domain'>{{getDomain}}</span>
           </h3>
           <p class='post-meta'>
             By
-            <a class='post-author' data-bind='text:postedBy(), attr: {href :"http://news.ycombinator.org/user?id="+postedBy() }'></a>
-            <span class='post-time' data-bind='text:postedAgo()'></span>
+            <a class='post-author' href='http://news.ycombinator.org/user?id={{postedBy}}'>{{postedBy}}</a>
+            <span class='post-time'>{{postedAgo}}</span>
           </p>
         </div>
       </div>
@@ -79,5 +79,5 @@
     <footer></footer>
   </body>
   <!-- %script{:src=>"javascripts/spin-start.js"} -->
-  <script data-main='javascripts/main.js' src='javascripts/require-jquery.js'></script>
+  <script data-main='javascripts/main.js' src='javascripts/libs/require-jquery.js'></script>
 </html>

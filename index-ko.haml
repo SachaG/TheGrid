@@ -21,17 +21,17 @@
 							%span.action Discuss
 					%li.post-upvote
 						%a.upvote-link{:href => "#"}
-							%span.points {{points}} 
+							%span.points{"data-bind" => "text:points()"} 
 							%span.action Upvote			
 				.post-content
-					%span.post-rank {{$index}}
+					%span.post-rank{'data-bind' => 'text:($index()+1)+"."'}
 					%h3.post-heading
-						%a.post-title{:target => "_blank", :href => "{{url}}"} {{title}}
-						%span.post-domain {{getDomain}}
+						%a.post-title{'data-bind' => 'text:title(), attr:{href:url()}', :target => "_blank"}
+						%span.post-domain{'data-bind' => 'text:getDomain()'}
 					%p.post-meta
 						By
-						%a.post-author{:href => "http://news.ycombinator.org/user?id={{postedBy}}"} {{postedBy}}
-						%span.post-time {{postedAgo}}
+						%a.post-author{'data-bind' => 'text:postedBy(), attr: {href :"http://news.ycombinator.org/user?id="+postedBy() }'}
+						%span.post-time{'data-bind' => 'text:postedAgo()'}
 
 
 				

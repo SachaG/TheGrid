@@ -21,20 +21,18 @@
 							%span.action Discuss
 					%li.post-upvote
 						%a.upvote-link{:href => "#"}
-							%span.points{"data-bind" => "text:points()"} 
+							%span.points {{points}} 
 							%span.action Upvote			
 				.post-content
-					%span.post-rank{'data-bind' => 'text:($index()+1)+"."'}
+					%span.post-rank {{getIndex}}.
 					%h3.post-heading
-						%a.post-title{'data-bind' => 'text:title(), attr:{href:url()}', :target => "_blank"}
-						%span.post-domain{'data-bind' => 'text:getDomain()'}
+						%a.post-title{:target => "_blank", :href => "{{url}}"} {{title}}
+						%span.post-domain {{getDomain}}
 					%p.post-meta
 						By
-						%a.post-author{'data-bind' => 'text:postedBy(), attr: {href :"http://news.ycombinator.org/user?id="+postedBy() }'}
-						%span.post-time{'data-bind' => 'text:postedAgo()'}
+						%a.post-author{:href => "http://news.ycombinator.org/user?id={{postedBy}}"} {{postedBy}}
+						%span.post-time {{postedAgo}}
 
-
-				
 		.header.grid
 			%ul.nav.site-nav
 				%li
@@ -57,4 +55,4 @@
 			/ /ko
 		%footer
 	/ %script{:src=>"javascripts/spin-start.js"} 
-	%script{"data-main"=>"javascripts/main.js", :src=>"javascripts/require-jquery.js"}
+	%script{"data-main"=>"javascripts/main.js", :src=>"javascripts/libs/require-jquery.js"}
