@@ -11,7 +11,7 @@
     <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
   </head>
   <body>
-    <script id='postsTemplate' type='text/html'>
+    <script id='posts-template' type='text/html'>
       <div class='post'>
         <ul class='post-actions'>
           <li class='post-share'>
@@ -26,21 +26,21 @@
           </li>
           <li class='post-upvote'>
             <a class='upvote-link' href='#'>
-              <span class='points'>{{points()}}</span>
+              <span class='points' data-bind='text:points()'></span>
               <span class='action'>Upvote</span>
             </a>
           </li>
         </ul>
         <div class='post-content'>
-          <span class='post-rank'>{{$index()}}</span>
+          <span class='post-rank' data-bind='text:($index()+1)+"."'></span>
           <h3 class='post-heading'>
-            <a class='post-title' target='_blank'>{{title()}}</a>
-            <span class='post-domain'>{{getDomain()}}</span>
+            <a class='post-title' data-bind='text:title(), attr:{href:url()}' target='_blank'></a>
+            <span class='post-domain' data-bind='text:getDomain()'></span>
           </h3>
           <p class='post-meta'>
             By
-            <a class='post-author' href='http://news.ycombinator.org/user?id='>{{postedBy}}</a>
-            <span class='post-time'>{{postedAgo}}</span>
+            <a class='post-author' data-bind='text:postedBy(), attr: {href :"http://news.ycombinator.org/user?id="+postedBy() }'></a>
+            <span class='post-time' data-bind='text:postedAgo()'></span>
           </p>
         </div>
       </div>
@@ -72,9 +72,9 @@
         </li>
       </ul>
     </div>
-    <div class='posts grid' data-bind='template: "postsTemplate"'>
-      
-      
+    <div class='posts grid'>
+      <!-- ko template: { name: 'posts-template', foreach: viewModel.items() } -->
+      <!-- /ko -->
     </div>
     <footer></footer>
   </body>
