@@ -21,12 +21,12 @@
 							%span.action Discuss
 					%li.post-upvote
 						%a.upvote-link{:href => "#"}
-							%span.points{"data-bind" => "text:points()"} {{points()}} 
+							%span.points{"data-bind" => "text:points()"}
 							%span.action Upvote			
 				.post-content
 					%span.post-rank{'data-bind' => 'text:($index()+1)+"."'}
 					%h3.post-heading
-						%a.post-title{'data-bind' => 'text:title(), attr:{href:url()}', :target => "_blank"} {{title()}}
+						%a.post-title{'data-bind' => 'text:title(), attr:{href:url()}', :target => "_blank"}
 						%span.post-domain{'data-bind' => 'text:getDomain()'}
 					%p.post-meta
 						By
@@ -57,4 +57,4 @@
 			=#/ /ko
 		%footer
 	/ %script{:src=>"javascripts/spin-start.js"} 
-	%script{"data-main"=>"javascripts/main.js", :src=>"javascripts/require-jquery.js"}
+	%script{"data-main"=>"javascripts/loader.js", :src=>"javascripts/require-jquery.js"}
