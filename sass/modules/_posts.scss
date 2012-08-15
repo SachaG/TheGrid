@@ -27,6 +27,9 @@
 					font-size:22px;
 					color:$text;
 					font-weight:bold;
+					&:hover{
+						color:$red;
+					}
 				}
 				.post-domain{
 					color:$light-text;
