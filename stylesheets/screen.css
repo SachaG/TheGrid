@@ -80,7 +80,7 @@ body {
   color: #4a4444; }
 
 /* line 5, ../sass/partials/_typography.scss */
-.post-title, .header {
+.post-title, .header, .post-rank {
   font-family: "kulturista-web", Rokkitt, Georgia, serif; }
 
 /* line 8, ../sass/partials/_typography.scss */
@@ -243,10 +243,10 @@ a {
       color: rgba(0, 0, 0, 0.1); }
     /* line 24, ../sass/modules/_posts.scss */
     .posts .post .post-content .post-heading {
-      margin-bottom: 3px; }
+      margin-bottom: 7px; }
       /* line 26, ../sass/modules/_posts.scss */
       .posts .post .post-content .post-heading .post-title {
-        font-size: 22px;
+        font-size: 20px;
         color: #4a4444;
         font-weight: normal; }
         /* line 30, ../sass/modules/_posts.scss */
@@ -286,11 +286,20 @@ a {
           background: #4a4444;
           color: white; }
         /* line 66, ../sass/modules/_posts.scss */
+        .posts .post .post-actions li a .count {
+          position: absolute;
+          top: 12px;
+          display: block;
+          width: 100%;
+          height: 20px;
+          line-height: 20px;
+          font-size: 11px; }
+        /* line 75, ../sass/modules/_posts.scss */
         .posts .post .post-actions li a .points {
           display: block;
           font-size: 30px;
           line-height: 50px; }
-        /* line 71, ../sass/modules/_posts.scss */
+        /* line 80, ../sass/modules/_posts.scss */
         .posts .post .post-actions li a .action {
           display: block;
           height: 20px;

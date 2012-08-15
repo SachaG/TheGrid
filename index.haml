@@ -20,6 +20,7 @@
 							%span.action Share
 					%li.post-discuss
 						%a.discuss-link.icon-comment{:href => "#"}
+							%span.count {{commentCount}}
 							%span.action Discuss
 					%li.post-upvote
 						%a.upvote-link{:href => "#"}
@@ -42,6 +43,10 @@
 					%a{:href => "#"} Top
 				%li
 					%a{:href => "#"} New
+				%li
+					%a{:href => "#"} Ask
+				%li
+					%a{:href => "#"} Show					
 				%li
 					%a{:href => "#"} Jobs
 			%ul.nav.user-nav
