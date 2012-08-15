@@ -53,12 +53,15 @@
 					line-height:$grid-unit;
 					vertical-align:baseline;
 					text-align:center;
+					color:$light-text;
+					font-size:36px;
+					line-height:50px;
 					&:hover{
-						background:white(0.7);
+						background:$dark-grey;
+						color:white;
 					}
 					.points{
 						display:block;
-						color:$light-text;
 						font-size:30px;
 						line-height:50px;
 					}
@@ -71,6 +74,7 @@
 						bottom:5px;
 						left:0px;
 						font-size:13px;
+						color:$red;
 					}
 				}
 			}

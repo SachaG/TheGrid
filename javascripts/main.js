@@ -13,8 +13,8 @@ cLog=function(s){
   }
 };
 
-postsURL='http://api.ihackernews.com/page?format=jsonp&callback=?';
-// postsURL='posts.json';
+// postsURL='http://api.ihackernews.com/page?format=jsonp&callback=?';
+postsURL='posts.json';
 
 require.config({
 	paths: {
@@ -71,8 +71,11 @@ require([
 
 	//---------------------------------------- Start Main jQuery Document Ready ---------------------------------------//
 	$(function() {
+		$(".posts").hide();
 		$.when($.getJSON(postsURL)).then(function(posts){
-			ko.applyBindings(new ProjectsViewModel(posts));	
+			ko.applyBindings(new ProjectsViewModel(posts));
+			$("#spinner").fadeOut("fast");
+			$(".posts").fadeIn("medium");	
 		});
 	});
 });

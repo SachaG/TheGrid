@@ -9,18 +9,20 @@
     <link href='stylesheets/screen.css' rel='stylesheet'>
     <link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+    <script src='javascripts/libs/spin.js'></script>
   </head>
   <body>
+    <div id='spinner'></div>
     <script id='posts-template' type='text/html'>
       <div class='post'>
         <ul class='post-actions'>
           <li class='post-share'>
-            <a class='share-link' href='#'>
+            <a class='share-link icon-share' href='#'>
               <span class='action'>Share</span>
             </a>
           </li>
           <li class='post-discuss'>
-            <a class='discuss-link' href='#'>
+            <a class='discuss-link icon-comment' href='#'>
               <span class='action'>Discuss</span>
             </a>
           </li>
@@ -68,7 +70,7 @@
           <a href='#'>Log In</a>
         </li>
         <li>
-          <a href='#'>Submit</a>
+          <a class='submit' href='#'>Submit</a>
         </li>
       </ul>
     </div>
@@ -78,6 +80,6 @@
     </div>
     <footer></footer>
   </body>
-  <!-- %script{:src=>"javascripts/spin-start.js"} -->
+  <script src='javascripts/spin-start.js'></script>
   <script data-main='javascripts/main.js' src='javascripts/libs/require-jquery.js'></script>
 </html>

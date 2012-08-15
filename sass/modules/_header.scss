@@ -2,10 +2,31 @@
 	background:$header-bg;
 	margin-bottom:$grid-margin;
 	height:$grid-unit;
+	@include cf;
 	.nav{
 		@include horizontal-list-container;
 		li{
 			@include horizontal-list-item;
+			a{
+				color:white;
+			}
+		}
+	}
+	.site-nav{
+		float:left;
+		margin-left:15px;
+	}
+	.logo{
+		width:100px;
+		margin:0 auto;
+	}
+	.user-nav{
+		float:right;
+		margin-right:15px;
+		.submit{
+			background:$red;
+			display:block;
+			padding:5px 10px;
 		}
 	}
 }
