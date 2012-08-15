@@ -23,7 +23,7 @@
 							%span.count {{commentCount}}
 							%span.action Discuss
 					%li.post-upvote
-						%a.upvote-link{:href => "#"}
+						%a.upvote-link{:class => "{{getPopularity}}", :href => "#"}
 							%span.points {{points}} 
 							%span.action Upvote			
 				.post-content

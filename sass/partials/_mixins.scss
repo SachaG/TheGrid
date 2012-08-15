@@ -22,6 +22,9 @@
 @function white($opacity){
 	@return rgba(255,255,255,$opacity)
 }
+@function red($opacity){
+	@return rgba($red,$opacity)
+}
 @mixin letterpress($opacity){
 	text-shadow:white($opacity) 0 1px 0;
 }

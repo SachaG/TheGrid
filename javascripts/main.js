@@ -57,8 +57,26 @@ require([
 		post.getDomain = ko.computed(function(){
 			return get_hostname(post.url());
 		});
-		post.getIndex = ko.computed(function() {
+		post.getIndex = ko.computed(function(){
 			return index+1;
+		});
+		post.getPopularity = ko.computed(function(){
+			var points=post.points();
+			cLog(points);
+			if(points < 20){
+				return "low";
+			}else if(points < 50){
+				return "medium";
+			}else if(points < 100){
+				return "hot";
+			}else if(points < 250){
+				return "superhot";
+			}else if(points < 500){
+				return "megahot";
+			}else{
+				return "gigahot";
+			}
+
 		})
 	}
 	// Overall viewmodel for this screen, along with initial state

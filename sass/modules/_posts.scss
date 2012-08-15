@@ -59,6 +59,39 @@
 					color:$light-text;
 					font-size:36px;
 					line-height:50px;
+					// &.medium{
+					// 	background-color:red(0.05);
+					// }
+					// &.hot{
+					// 	background-color:red(0.2);
+					// }
+					// &.superhot{
+					// 	background-color:red(0.3);
+					// }
+					// &.megahot{
+					// 	background-color:red(0.5);
+					// }
+					// &.gigahot{
+					// 	background-color:red(0.8);					
+					// }
+					// &.low{
+					// 	color:red(0.2);
+					// }
+					// &.medium{
+					// 	color:red(0.3);
+					// }
+					// &.hot{
+					// 	color:red(0.4);
+					// }
+					// &.superhot{
+					// 	color:red(0.6);
+					// }
+					// &.megahot{
+					// 	color:red(0.8);
+					// }
+					// &.gigahot{
+					// 	color:red(1);					
+					// }
 					&:hover{
 						background:$dark-grey;
 						color:white;
