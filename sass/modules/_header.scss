@@ -1,5 +1,14 @@
+// .header{
+// 	background:url("../images/bg-black.png") top center;
+// }
+// @media only screen and (-webkit-min-device-pixel-ratio: 1.5){
+// 	.header{
+// 		background:url("../images/bg-black@2x.png") top center;
+// 		background-size:10px 10px;
+// 	}
+// }
 .header{
-	background:$header-bg;
+	background-color:$header-bg;
 	margin-bottom:$grid-margin;
 	height:$grid-unit;
 	position:relative;
@@ -14,6 +23,7 @@
 				color:white;
 				line-height:26px;
 				height:26px;
+				font-weight:normal;
 			}
 		}
 	}

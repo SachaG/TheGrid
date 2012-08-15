@@ -20,14 +20,16 @@ require.config({
 	paths: {
 		knockout: 			"libs/knockout-2.1.0",
 		mapping: 			"libs/knockout.mapping",
-		mustache: 			"libs/mustache"
+		mustache: 			"libs/mustache",
+		typekit: 			"plugins/typekit"
 	}
 })
 require([
 	"jquery",
 	"mustache",
 	"knockout", 
-	"mapping"
+	"mapping",
+	"typekit"
 ], function(
 	$,
 	Mustache,
@@ -74,8 +76,11 @@ require([
 		$(".posts").hide();
 		$.when($.getJSON(postsURL)).then(function(posts){
 			ko.applyBindings(new ProjectsViewModel(posts));
-			$("#spinner").fadeOut("fast");
-			$(".posts").fadeIn("medium");	
+
+			$.when(loadTypekit).then(function(){
+				$("#spinner").fadeOut("fast");
+				$(".posts").fadeIn("medium");
+			});	
 		});
 	});
 });

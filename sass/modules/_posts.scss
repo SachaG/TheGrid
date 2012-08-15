@@ -5,7 +5,7 @@
 		@include cf;
 		.post-content{
 			background:#fff;
-			height:$grid-unit - 30px;
+			min-height:$grid-unit - 30px;
 			margin-right:240px;
 			padding:15px;
 			.post-rank{
@@ -26,7 +26,7 @@
 				.post-title{
 					font-size:22px;
 					color:$text;
-					font-weight:bold;
+					font-weight:normal;
 					&:hover{
 						color:$red;
 					}
