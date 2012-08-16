@@ -46,6 +46,7 @@ require([
 	"mustache",
 	"knockout", 
 	"mapping",
+	"libs/sammy",
 	"typekit",
 	"plugins/jquery.history"
 ], function(
@@ -110,27 +111,36 @@ require([
 		self.postId = ko.observable();
 		self.postData = ko.observable();
 
+		// this.getDomain = ko.computed(function(){
+		// 	return get_hostname(this.url());
+		// }, self.postData());
+
 		// Behaviours
-		self.goToPost = function() {
-			self.homeData(null);
-			// self.postId(post);
-			$.getJSON('post.json', {}, self.postData);
-		};
-
+		
 		self.goToHome = function() { 
-			self.postData(null);
-			$.getJSON('posts.json', {}, self.homeData);
-			// viewModel= ko.mapping.fromJS();
+			location.hash = 'top';
 		};
 
-		// self.goToPost();
-		// cLog(self.postData());
+		self.goToPost = function() {
+			location.hash = 'post';
+		};
+
+
+		Sammy(function() {
+			this.get('#top', function() {
+				self.postData(null);
+				$.getJSON('posts.json', {}, self.homeData);
+			});
+
+			this.get('#post', function() {
+				self.homeData(null);
+				$.getJSON('post.json', {}, self.postData);
+			});
+		    this.get('', function() { this.app.runRoute('get', '#top') });
+		}).run();
 
 		self.goToHome();
-		// cLog(self.homeData());
-
 	}
-
 
 	//---------------------------------------- Start Main jQuery Document Ready ---------------------------------------//
 	$(function() {
