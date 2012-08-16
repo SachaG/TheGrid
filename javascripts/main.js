@@ -1,20 +1,37 @@
+vars=getUrlVars();
+
 debug=true;
+vars=getUrlVars();
+if("debug" in vars){
+  debug=true;
+}
 
 $("body, html").removeClass("no-js");
 
 function get_hostname(url) {
-    var m = ((url||'')+'').match(/^http:\/\/[^/]+/);
-    return m ? m[0].substr(7) : null;
+	var m = ((url||'')+'').match(/^http:\/\/[^/]+/);
+	return m ? m[0].substr(7) : null;
+}
+// Read a page's GET URL variables and return them as an associative array.
+function getUrlVars(){
+	var vars = [], hash;
+	var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+	for(var i = 0; i < hashes.length; i++){
+		hash = hashes[i].split('=');
+		vars.push(hash[0]);
+		vars[hash[0]] = hash[1];
+	}
+	return vars;
 }
 
 cLog=function(s){
   if(debug){
-    console.log(s);
+	console.log(s);
   }
 };
 
-// postsURL='http://api.ihackernews.com/page?format=jsonp&callback=?';
-postsURL='posts.json';
+// dataURL='http://api.ihackernews.com/page?format=jsonp&callback=?';
+dataURL='posts.json';
 
 require.config({
 	paths: {
@@ -29,7 +46,8 @@ require([
 	"mustache",
 	"knockout", 
 	"mapping",
-	"typekit"
+	"typekit",
+	"plugins/jquery.history"
 ], function(
 	$,
 	Mustache,
@@ -62,7 +80,6 @@ require([
 		});
 		post.getPopularity = ko.computed(function(){
 			var points=post.points();
-			cLog(points);
 			if(points < 20){
 				return "low";
 			}else if(points < 50){
@@ -80,20 +97,38 @@ require([
 		})
 	}
 	// Overall viewmodel for this screen, along with initial state
-	function ProjectsViewModel(data) {
+	function GridViewModel(data) {
 		var self = this;
 		// viewModel = ko.observableArray(data);
 		viewModel= ko.mapping.fromJS(data);
+
 		$.each(viewModel.items(), function(index, post){
 			addCustomObservables(index, post, viewModel.items());
 		});
+
+		self.homeData = ko.observable();
+		self.chosenPostId = ko.observable();
+		self.chosenPostData = ko.observable();
+
+		// Behaviours
+		self.goToPost = function(post) { 
+			self.chosenPostId(post);
+			$.get('/post.php', { postId: post.id }, self.chosenPostData);
+		};
+		self.goToHome = function() { 
+			self.chosenPostData(null);
+			$.getJSON(data, self.homeData);
+		};
+		self.goToHome();
 	}
+
 
 	//---------------------------------------- Start Main jQuery Document Ready ---------------------------------------//
 	$(function() {
 		$(".posts").hide();
-		$.when($.getJSON(postsURL)).then(function(posts){
-			ko.applyBindings(new ProjectsViewModel(posts));
+		$.when($.getJSON(dataURL)).then(function(data){
+
+			ko.applyBindings(new GridViewModel(data));
 
 			$.when(loadTypekit).then(function(){
 				$("#spinner").fadeOut("fast");
