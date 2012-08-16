@@ -12,14 +12,15 @@
 		%script{:src=>"javascripts/libs/spin.js"} 
 	%body
 		#spinner							
-		%script{:type=>"text/html", :id=>"posts-template"}
+		%script#posts-template{:type=>"text/html"}
+			%pre.debug{"data-bind"=>"text: JSON.stringify(ko.toJS($data), null, 2)"}	
 			.post
 				%ul.post-actions
 					%li.post-share
 						%a.share-link.icon-share{:href => "#"}
 							%span.action Share
 					%li.post-discuss
-						%a.discuss-link.icon-comment{:href => "#"}
+						%a.discuss-link.icon-comment{:href => "#", "data-bind" => "click: $root.goToPost"}
 							%span.count {{commentCount}}
 							%span.action Discuss
 					%li.post-upvote
@@ -35,12 +36,54 @@
 						By
 						%a.post-author{:href => "http://news.ycombinator.org/user?id={{postedBy}}"} {{postedBy}}
 						%span.post-time {{postedAgo}}
+		%script#post-template{:type=>"text/html"}
+			%pre.debug{"data-bind"=>"text: JSON.stringify(ko.toJS($data), null, 2)"}	
+			.post
+				%ul.post-actions
+					%li.post-share
+						%a.share-link.icon-share{:href => "#"}
+							%span.action Share
+					%li.post-discuss
+						%a.discuss-link.icon-comment{:href => "#post", "data-bind" => "click: $root.goToPost"}
+							%span.count {{commentCount}}
+							%span.action Discuss
+					%li.post-upvote
+						%a.upvote-link{:class => "{{getPopularity}}", :href => "#"}
+							%span.points {{points}} 
+							%span.action Upvote			
+				.post-content
+					%span.post-rank {{getIndex}}.
+					%h3.post-heading
+						%a.post-title{:target => "_blank", :href => "{{url}}"} {{title}}
+						%span.post-domain {{getDomain}}
+					%p.post-meta
+						By
+						%a.post-author{:href => "http://news.ycombinator.org/user?id={{postedBy}}"} {{postedBy}}
+						%span.post-time {{postedAgo}}
+			.post-message {{content}}
+			%ul.comments
+				/ ko template: { name: 'comment-template', foreach: comments }
+				/ /ko
+		%script#comment-template{:type => "text/html"}
+			%li.comment
+				.comment-content
+					.comment-actions
+						%a.upvote.icon-up{:href => "#"} upvote
+						%a.downvote.icon-down{:href => "#"} downvote
+					.comment-meta
+						%a.comment-username{:href => "#"} {{username}}
+						%span.comment-time {{time}}
+						%a.comment-permalink.icon-link{:href => "#"} link
+					.comment-text{"data-bind" => "html:comment"}
+				=#%pre.debug{"data-bind"=>"text: JSON.stringify(ko.toJS($data), null, 2)"}	
+				.comment-children	
+					%ul{"data-bind" => "template: { name: 'comment-template', foreach: children}"}
 		.header.grid
 			%h1.logo
 				%a{:href => "#"} The Grid
 			%ul.nav.site-nav
 				%li
-					%a{:href => "#"} Top
+					%a{:href => "#top", "data-bind" => "click: $root.goToHome"} Top
 				%li
 					%a{:href => "#"} New
 				%li
@@ -56,9 +99,12 @@
 					%a{:href => "#"} Log In
 				%li
 					%a.submit{:href => "#"} Submit
-		.posts.grid{"data-bind" => "with: viewModel"}
+		.posts.grid{"data-bind" => "with: homeData"}
 			/ ko template: { name: 'posts-template', foreach: items }
 			/ /ko
+		.post.grid{"data-bind" => "with: postData"}
+			/ ko template: { name: 'post-template' }
+			/ /ko	
 		%footer
 	%script{:src=>"javascripts/spin-start.js"} 
 	%script{"data-main"=>"javascripts/main.js", :src=>"javascripts/libs/require-jquery.js"}

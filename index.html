@@ -14,6 +14,7 @@
   <body>
     <div id='spinner'></div>
     <script id='posts-template' type='text/html'>
+      <pre class='debug' data-bind='text: JSON.stringify(ko.toJS($data), null, 2)'></pre>
       <div class='post'>
         <ul class='post-actions'>
           <li class='post-share'>
@@ -22,7 +23,7 @@
             </a>
           </li>
           <li class='post-discuss'>
-            <a class='discuss-link icon-comment' href='#'>
+            <a class='discuss-link icon-comment' data-bind='click: $root.goToPost' href='#'>
               <span class='count'>{{commentCount}}</span>
               <span class='action'>Discuss</span>
             </a>
@@ -48,13 +49,74 @@
         </div>
       </div>
     </script>
+    <script id='post-template' type='text/html'>
+      <pre class='debug' data-bind='text: JSON.stringify(ko.toJS($data), null, 2)'></pre>
+      <div class='post'>
+        <ul class='post-actions'>
+          <li class='post-share'>
+            <a class='share-link icon-share' href='#'>
+              <span class='action'>Share</span>
+            </a>
+          </li>
+          <li class='post-discuss'>
+            <a class='discuss-link icon-comment' data-bind='click: $root.goToPost' href='#post'>
+              <span class='count'>{{commentCount}}</span>
+              <span class='action'>Discuss</span>
+            </a>
+          </li>
+          <li class='post-upvote'>
+            <a class='upvote-link {{getPopularity}}' href='#'>
+              <span class='points'>{{points}}</span>
+              <span class='action'>Upvote</span>
+            </a>
+          </li>
+        </ul>
+        <div class='post-content'>
+          <span class='post-rank'>{{getIndex}}.</span>
+          <h3 class='post-heading'>
+            <a class='post-title' href='{{url}}' target='_blank'>{{title}}</a>
+            <span class='post-domain'>{{getDomain}}</span>
+          </h3>
+          <p class='post-meta'>
+            By
+            <a class='post-author' href='http://news.ycombinator.org/user?id={{postedBy}}'>{{postedBy}}</a>
+            <span class='post-time'>{{postedAgo}}</span>
+          </p>
+        </div>
+      </div>
+      <div class='post-message'>{{content}}</div>
+      <ul class='comments'>
+        <!-- ko template: { name: 'comment-template', foreach: comments } -->
+        <!-- /ko -->
+      </ul>
+    </script>
+    <script id='comment-template' type='text/html'>
+      <li class='comment'>
+        <div class='comment-content'>
+          <div class='comment-actions'>
+            <a class='upvote icon-up' href='#'>upvote</a>
+            <a class='downvote icon-down' href='#'>downvote</a>
+          </div>
+          <div class='comment-meta'>
+            <a class='comment-username' href='#'>{{username}}</a>
+            <span class='comment-time'>{{time}}</span>
+            <a class='comment-permalink icon-link' href='#'>link</a>
+          </div>
+          <div class='comment-text' data-bind='html:comment'></div>
+        </div>
+        
+        <div class='comment-children'>
+          <ul data-bind="template: { name: 'comment-template', foreach: children}"></ul>
+        </div>
+      </li>
+    </script>
     <div class='header grid'>
       <h1 class='logo'>
         <a href='#'>The Grid</a>
       </h1>
       <ul class='nav site-nav'>
         <li>
-          <a href='#'>Top</a>
+          <a data-bind='click: $root.goToHome' href='#top'>Top</a>
         </li>
         <li>
           <a href='#'>New</a>
@@ -81,8 +143,12 @@
         </li>
       </ul>
     </div>
-    <div class='posts grid' data-bind='with: viewModel'>
+    <div class='posts grid' data-bind='with: homeData'>
       <!-- ko template: { name: 'posts-template', foreach: items } -->
+      <!-- /ko -->
+    </div>
+    <div class='post grid' data-bind='with: postData'>
+      <!-- ko template: { name: 'post-template' } -->
       <!-- /ko -->
     </div>
     <footer></footer>

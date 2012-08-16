@@ -56,7 +56,7 @@ require([
 ) {
 	//---------------------------------------- Knockout Stuff ---------------------------------------//
 	ko.mapping=mapping;
-	
+	window.ko=ko;
 	ko.mustacheTemplateEngine = function () { }
 	ko.mustacheTemplateEngine.prototype = ko.utils.extend(new ko.templateEngine(), {
 		renderTemplateSource: function (templateSource, bindingContext, options) {
@@ -97,43 +97,58 @@ require([
 		})
 	}
 	// Overall viewmodel for this screen, along with initial state
-	function GridViewModel(data) {
+	function GridViewModel() {
 		var self = this;
 		// viewModel = ko.observableArray(data);
-		viewModel= ko.mapping.fromJS(data);
+		// viewModel= ko.mapping.fromJS();
 
-		$.each(viewModel.items(), function(index, post){
-			addCustomObservables(index, post, viewModel.items());
-		});
+		// $.each(viewModel.items(), function(index, post){
+		// 	addCustomObservables(index, post, viewModel.items());
+		// });
 
 		self.homeData = ko.observable();
-		self.chosenPostId = ko.observable();
-		self.chosenPostData = ko.observable();
+		self.postId = ko.observable();
+		self.postData = ko.observable();
 
 		// Behaviours
-		self.goToPost = function(post) { 
-			self.chosenPostId(post);
-			$.get('/post.php', { postId: post.id }, self.chosenPostData);
+		self.goToPost = function() {
+			self.homeData(null);
+			// self.postId(post);
+			$.getJSON('post.json', {}, self.postData);
 		};
+
 		self.goToHome = function() { 
-			self.chosenPostData(null);
-			$.getJSON(data, self.homeData);
+			self.postData(null);
+			$.getJSON('posts.json', {}, self.homeData);
+			// viewModel= ko.mapping.fromJS();
 		};
+
+		// self.goToPost();
+		// cLog(self.postData());
+
 		self.goToHome();
+		// cLog(self.homeData());
+
 	}
 
 
 	//---------------------------------------- Start Main jQuery Document Ready ---------------------------------------//
 	$(function() {
 		$(".posts").hide();
-		$.when($.getJSON(dataURL)).then(function(data){
+		ko.applyBindings(new GridViewModel());
 
-			ko.applyBindings(new GridViewModel(data));
+		$.when(loadTypekit).then(function(){
+			$("#spinner").fadeOut("fast");
+			$(".posts").fadeIn("medium");
+		});	
+		// $.when($.getJSON(dataURL)).then(function(data){
 
-			$.when(loadTypekit).then(function(){
-				$("#spinner").fadeOut("fast");
-				$(".posts").fadeIn("medium");
-			});	
-		});
+		// 	ko.applyBindings(new GridViewModel(data));
+
+		// 	$.when(loadTypekit).then(function(){
+		// 		$("#spinner").fadeOut("fast");
+		// 		$(".posts").fadeIn("medium");
+		// 	});	
+		// });
 	});
 });
