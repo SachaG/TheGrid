@@ -47,6 +47,7 @@ require([
 	"knockout", 
 	"mapping",
 	"libs/sammy",
+	"libs/underscore",
 	"typekit",
 	"plugins/jquery.history"
 ], function(
@@ -111,9 +112,9 @@ require([
 		self.postId = ko.observable();
 		self.postData = ko.observable();
 
-		// this.getDomain = ko.computed(function(){
+		// self.getDomain = ko.computed(function(){
 		// 	return get_hostname(this.url());
-		// }, self.postData());
+		// }, self.homeData());
 
 		// Behaviours
 		
@@ -125,11 +126,13 @@ require([
 			location.hash = 'post';
 		};
 
-
 		Sammy(function() {
 			this.get('#top', function() {
 				self.postData(null);
 				$.getJSON('posts.json', {}, self.homeData);
+				// $.getJSON('posts.json', {}, function(data){
+				// 	ko.mapping.fromJS(data, self.homeData);
+				// });
 			});
 
 			this.get('#post', function() {
@@ -138,8 +141,6 @@ require([
 			});
 		    this.get('', function() { this.app.runRoute('get', '#top') });
 		}).run();
-
-		self.goToHome();
 	}
 
 	//---------------------------------------- Start Main jQuery Document Ready ---------------------------------------//
@@ -151,14 +152,5 @@ require([
 			$("#spinner").fadeOut("fast");
 			$(".posts").fadeIn("medium");
 		});	
-		// $.when($.getJSON(dataURL)).then(function(data){
-
-		// 	ko.applyBindings(new GridViewModel(data));
-
-		// 	$.when(loadTypekit).then(function(){
-		// 		$("#spinner").fadeOut("fast");
-		// 		$(".posts").fadeIn("medium");
-		// 	});	
-		// });
 	});
 });
