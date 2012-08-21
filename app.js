@@ -1,9 +1,12 @@
 var assets = require('connect-assets')
-  , CONFIG = require('./config')
   , express = require('express')
+  , fs = require('fs')
   , moment = require('moment')
   , MongoSession = require('connect-mongo')(express)
+  , CONFIG = require('./config')
   , routes = require('./routes');
+
+var commit = fs.readFileSync('./.git/refs/heads/master', 'utf-8');
 
 var app = express.createServer();
 app.configure(function(){
@@ -33,6 +36,7 @@ app.configure(function(){
 app.helpers({
     moment: moment
   , error: null
+  , commit: commit
 });
 app.dynamicHelpers({
   loggedIn: function(req){
