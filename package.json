@@ -1,0 +1,25 @@
+{
+    "name": "the-grid"
+  , "version": "0.0.1"
+  , "private": true
+  , "scripts": {
+      "start": "node app.js"
+  }
+  , "engines": {
+      "node": "0.8.x"
+    , "npm": "1.1.x"
+  }
+  , "dependencies": {
+      "async": "*"
+    , "bcrypt": "*"
+    , "connect-assets": "*"
+    , "connect-mongo": "*"
+    , "express": "2.x"
+    , "jade": "*"
+    , "moment": "*"
+    , "mongolian": "*"
+    , "request": "*"
+    , "stylus": "*"
+    , "underscore": "*"
+  }
+}

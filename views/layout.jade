@@ -1,0 +1,48 @@
+!!! 5
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    title The Grid
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    block styles
+      link(href='http://fonts.googleapis.com/css?family=Rokkitt:400,700', rel='stylesheet', type='text/css')
+      link(href='http://fonts.googleapis.com/css?family=PT+Sans:400,700', rel='stylesheet', type='text/css')
+      //!=css('app')
+      !=css('screen.css')
+    block scripts_header
+  body
+    header.header.grid
+      h1.logo
+        a(href='/') The Grid
+      ul.nav.site-nav
+       if url === '/'
+         li.selected: a(href='/') Top
+       else
+         li: a(href='/') Top
+       if url === '/new'
+         li.selected: a(href='/new') New
+       else
+         li: a(href='/new') New
+       if url === '/ask'
+         li.selected: a(href='/ask') Ask
+       else
+         li: a(href='/ask') Ask
+       if url === '/show'
+         li.selected: a(href='/show') Show
+       else
+         li: a(href='/show') Show
+       if url === '/jobs'
+         li.selected: a(href='/jobs') Jobs
+       else
+         li: a(href='/jobs') Jobs
+      ul.nav.user-nav
+       if loggedIn
+         li: a(href='/logout') Log Out
+       else
+         li: a(href='/signup') Sign Up
+         li: a(href='/login') Log In
+       li: a.submit(href='/submit') Submit
+    block content
+    block scripts_footer
