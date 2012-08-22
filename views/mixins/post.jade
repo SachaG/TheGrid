@@ -9,7 +9,7 @@ mixin post(post)
           span.count #{post.comments}
           span.action Discuss
       li.post-upvote
-        a.upvote-link(href='/posts/#{post._id}/upvote')
+        a.upvote-link(href='/posts/#{post._id}/upvote', class=(post.upvoted ? 'disabled' : null))
           span.points #{post.votes}
           span.action Upvote
     .post-content

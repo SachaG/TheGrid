@@ -5,6 +5,6 @@ block content
   .posts.grid
     if posts && posts.length
       for post in posts
-        mixin post(post)
+        +post(post)
     else
       p No posts yet.
