@@ -79,13 +79,13 @@ body {
   display: none; }
 
 /* line 1, ../sass/partials/_typography.scss */
-body {
+body, textarea, input, button, input[type="submit"], input[type="button"] {
   font-family: "PT SANS", Helvetica, sans-serif;
   color: #4a4444;
   line-height: 1.6; }
 
 /* line 6, ../sass/partials/_typography.scss */
-.post-title, .header, .post-rank {
+.post-title, .header, .post-rank, .button {
   font-family: "kulturista-web", Rokkitt, Georgia, serif; }
 
 /* line 9, ../sass/partials/_typography.scss */
@@ -143,11 +143,11 @@ a {
 .icon-link:before {
   content: "\6c"; }
 
-/* line 6, ../sass/partials/_grid.scss */
+/* line 7, ../sass/partials/_grid.scss */
 .grid {
   width: 960px;
-  width: 80%;
-  margin: 0 10%; }
+  width: 74%;
+  margin: 0 13%; }
 
 /* line 10, ../sass/modules/_header.scss */
 .header {
@@ -158,11 +158,11 @@ a {
   /* For modern browsers */
   /* For IE 6/7 (trigger hasLayout) */
   *zoom: 1; }
-  /* line 39, ../sass/partials/_mixins.scss */
+  /* line 49, ../sass/partials/_mixins.scss */
   .header:before, .header:after {
     content: "";
     display: table; }
-  /* line 43, ../sass/partials/_mixins.scss */
+  /* line 53, ../sass/partials/_mixins.scss */
   .header:after {
     clear: both; }
   /* line 16, ../sass/modules/_header.scss */
@@ -196,14 +196,15 @@ a {
       /* line 22, ../sass/modules/_header.scss */
       .header .nav li a {
         color: white;
+        font-size: 16px;
         line-height: 26px;
         height: 26px;
         font-weight: normal; }
-  /* line 30, ../sass/modules/_header.scss */
+  /* line 31, ../sass/modules/_header.scss */
   .header .site-nav {
     float: left;
     margin-left: 20px; }
-  /* line 34, ../sass/modules/_header.scss */
+  /* line 35, ../sass/modules/_header.scss */
   .header .logo {
     position: absolute;
     top: 20px;
@@ -216,11 +217,11 @@ a {
     font: 0/0 a;
     text-shadow: none;
     color: transparent; }
-  /* line 48, ../sass/modules/_header.scss */
+  /* line 49, ../sass/modules/_header.scss */
   .header .user-nav {
     float: right;
     margin-right: 10px; }
-    /* line 51, ../sass/modules/_header.scss */
+    /* line 52, ../sass/modules/_header.scss */
     .header .user-nav .submit {
       background: #f6431a;
       display: block;
@@ -229,24 +230,24 @@ a {
 /* line 1, ../sass/modules/_posts.scss */
 .post {
   position: relative;
-  margin-bottom: 10px;
   /* For modern browsers */
   /* For IE 6/7 (trigger hasLayout) */
   *zoom: 1; }
-  /* line 39, ../sass/partials/_mixins.scss */
+  /* line 49, ../sass/partials/_mixins.scss */
   .post:before, .post:after {
     content: "";
     display: table; }
-  /* line 43, ../sass/partials/_mixins.scss */
+  /* line 53, ../sass/partials/_mixins.scss */
   .post:after {
     clear: both; }
   /* line 5, ../sass/modules/_posts.scss */
   .post .post-content {
     background: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
     min-height: 40px;
-    margin-right: 240px;
-    padding: 15px; }
-    /* line 10, ../sass/modules/_posts.scss */
+    margin-right: 240px; }
+    /* line 9, ../sass/modules/_posts.scss */
     .post .post-content .post-rank {
       position: absolute;
       top: 0px;
@@ -258,36 +259,36 @@ a {
       text-align: right;
       font-size: 30px;
       color: rgba(0, 0, 0, 0.1); }
-    /* line 23, ../sass/modules/_posts.scss */
+    /* line 22, ../sass/modules/_posts.scss */
     .post .post-content .post-heading {
       margin-bottom: 2px; }
-      /* line 25, ../sass/modules/_posts.scss */
+      /* line 24, ../sass/modules/_posts.scss */
       .post .post-content .post-heading .post-title {
         font-size: 20px;
         color: #4a4444;
         font-weight: normal;
         line-height: 1; }
-        /* line 30, ../sass/modules/_posts.scss */
+        /* line 29, ../sass/modules/_posts.scss */
         .post .post-content .post-heading .post-title:hover {
           color: #f6431a; }
-      /* line 34, ../sass/modules/_posts.scss */
+      /* line 33, ../sass/modules/_posts.scss */
       .post .post-content .post-heading .post-domain {
         color: #b5b0b0;
         font-size: 14px; }
-    /* line 39, ../sass/modules/_posts.scss */
+    /* line 38, ../sass/modules/_posts.scss */
     .post .post-content .post-meta {
       font-size: 13px;
       color: #b5b0b0;
       line-height: 1; }
-  /* line 45, ../sass/modules/_posts.scss */
+  /* line 44, ../sass/modules/_posts.scss */
   .post .post-actions {
     float: right;
     padding: 0; }
-    /* line 48, ../sass/modules/_posts.scss */
+    /* line 47, ../sass/modules/_posts.scss */
     .post .post-actions li {
       float: left;
       margin-left: 10px; }
-      /* line 51, ../sass/modules/_posts.scss */
+      /* line 50, ../sass/modules/_posts.scss */
       .post .post-actions li a {
         position: relative;
         background: #fff;
@@ -300,11 +301,11 @@ a {
         color: #b5b0b0;
         font-size: 36px;
         line-height: 50px; }
-        /* line 96, ../sass/modules/_posts.scss */
+        /* line 95, ../sass/modules/_posts.scss */
         .post .post-actions li a:hover {
           background: #4a4444;
           color: white; }
-        /* line 100, ../sass/modules/_posts.scss */
+        /* line 99, ../sass/modules/_posts.scss */
         .post .post-actions li a .count {
           position: absolute;
           top: 12px;
@@ -313,12 +314,12 @@ a {
           height: 20px;
           line-height: 20px;
           font-size: 11px; }
-        /* line 109, ../sass/modules/_posts.scss */
+        /* line 108, ../sass/modules/_posts.scss */
         .post .post-actions li a .points {
           display: block;
           font-size: 30px;
           line-height: 50px; }
-        /* line 114, ../sass/modules/_posts.scss */
+        /* line 113, ../sass/modules/_posts.scss */
         .post .post-actions li a .action {
           display: block;
           height: 20px;
@@ -330,7 +331,7 @@ a {
           font-size: 13px;
           color: #f6431a; }
 
-/* line 129, ../sass/modules/_posts.scss */
+/* line 128, ../sass/modules/_posts.scss */
 .post-message {
   background: white;
   padding: 20px;
@@ -344,20 +345,20 @@ a {
 /* line 6, ../sass/modules/_comments.scss */
 .comment-content {
   position: relative;
-  background: white;
-  padding: 20px;
+  background: #fff;
+  padding: 15px;
   margin-bottom: 10px;
   font-size: 14px; }
 
-/* line 13, ../sass/modules/_comments.scss */
+/* line 11, ../sass/modules/_comments.scss */
 .comment-meta {
   margin-bottom: 5px;
   color: #b5b0b0; }
-  /* line 15, ../sass/modules/_comments.scss */
+  /* line 13, ../sass/modules/_comments.scss */
   .comment-meta .comment-username, .comment-meta .comment-time, .comment-meta .comment-permalink {
     display: inline-block;
     margin-right: 4px; }
-  /* line 20, ../sass/modules/_comments.scss */
+  /* line 18, ../sass/modules/_comments.scss */
   .comment-meta .comment-permalink {
     position: relative;
     text-indent: 100%;
@@ -365,23 +366,23 @@ a {
     overflow: hidden;
     width: 20px;
     color: #b5b0b0; }
-    /* line 25, ../sass/modules/_comments.scss */
+    /* line 23, ../sass/modules/_comments.scss */
     .comment-meta .comment-permalink:before {
       position: absolute;
       display: block;
       top: 1px;
       left: 0;
       text-indent: 0; }
-    /* line 32, ../sass/modules/_comments.scss */
+    /* line 30, ../sass/modules/_comments.scss */
     .comment-meta .comment-permalink:hover:before {
       color: #f6431a; }
 
-/* line 37, ../sass/modules/_comments.scss */
+/* line 35, ../sass/modules/_comments.scss */
 .comment-actions {
   position: absolute;
   left: -40px;
   top: 0px; }
-  /* line 41, ../sass/modules/_comments.scss */
+  /* line 39, ../sass/modules/_comments.scss */
   .comment-actions a {
     position: relative;
     display: block;
@@ -392,10 +393,10 @@ a {
     text-indent: 100%;
     white-space: nowrap;
     overflow: hidden; }
-    /* line 49, ../sass/modules/_comments.scss */
+    /* line 47, ../sass/modules/_comments.scss */
     .comment-actions a.upvote {
       margin-bottom: 2px; }
-    /* line 52, ../sass/modules/_comments.scss */
+    /* line 50, ../sass/modules/_comments.scss */
     .comment-actions a:before {
       display: block;
       position: absolute;
@@ -405,9 +406,88 @@ a {
       text-align: center;
       text-indent: 0;
       color: rgba(0, 0, 0, 0.2); }
-    /* line 62, ../sass/modules/_comments.scss */
+    /* line 60, ../sass/modules/_comments.scss */
     .comment-actions a:hover {
       background: rgba(0, 0, 0, 0.17); }
-      /* line 64, ../sass/modules/_comments.scss */
+      /* line 62, ../sass/modules/_comments.scss */
       .comment-actions a:hover:before {
         color: white; }
+
+/* line 68, ../sass/modules/_comments.scss */
+.comment-new {
+  background: #fff;
+  padding: 15px;
+  margin-bottom: 10px; }
+
+/* line 1, ../sass/modules/_forms.scss */
+form {
+  background: #fff;
+  padding: 15px;
+  margin-bottom: 10px; }
+  /* line 3, ../sass/modules/_forms.scss */
+  form .control-group {
+    margin-bottom: 15px; }
+    /* line 5, ../sass/modules/_forms.scss */
+    form .control-group label {
+      float: left; }
+    /* line 8, ../sass/modules/_forms.scss */
+    form .control-group .controls {
+      margin-left: 100px; }
+  /* line 12, ../sass/modules/_forms.scss */
+  form .form-actions {
+    /* For modern browsers */
+    /* For IE 6/7 (trigger hasLayout) */
+    *zoom: 1; }
+    /* line 49, ../sass/partials/_mixins.scss */
+    form .form-actions:before, form .form-actions:after {
+      content: "";
+      display: table; }
+    /* line 53, ../sass/partials/_mixins.scss */
+    form .form-actions:after {
+      clear: both; }
+  /* line 15, ../sass/modules/_forms.scss */
+  form input[type="text"], form textarea {
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    -webkit-box-sizing: border-box;
+    /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;
+    /* Firefox, other Gecko */
+    box-sizing: border-box;
+    /* Opera/IE 8+ */
+    border: none;
+    -webkit-transition: all, 500ms;
+    -moz-transition: all, 500ms;
+    -o-transition: all, 500ms;
+    transition: all, 500ms;
+    -webkit-box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.2); }
+    /* line 23, ../sass/modules/_forms.scss */
+    form input[type="text"]:focus, form textarea:focus {
+      outline: none;
+      -webkit-box-shadow: inset 0px 0px 0px 1px rgba(246, 67, 26, 0.5), 0px 0px 5px 0px rgba(246, 67, 26, 0.2);
+      -moz-box-shadow: inset 0px 0px 0px 1px rgba(246, 67, 26, 0.5), 0px 0px 5px 0px rgba(246, 67, 26, 0.2);
+      box-shadow: inset 0px 0px 0px 1px rgba(246, 67, 26, 0.5), 0px 0px 5px 0px rgba(246, 67, 26, 0.2); }
+  /* line 28, ../sass/modules/_forms.scss */
+  form input[type="text"] {
+    height: 30px;
+    line-height: 24px;
+    padding: 5px 10px; }
+  /* line 33, ../sass/modules/_forms.scss */
+  form textarea {
+    min-height: 100px;
+    padding: 5px 10px;
+    line-height: 1.4; }
+  /* line 38, ../sass/modules/_forms.scss */
+  form input[type="submit"], form button, form .button, form .btn {
+    background: #f6431a;
+    color: white;
+    display: block;
+    padding: 0px 10px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0;
+    float: right; }
