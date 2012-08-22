@@ -60,21 +60,22 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* line 1, ../sass/partials/_main.scss */
 body {
-  background: #efefef url("bg.png") top center; }
+  background: #efefef url("bg.png") top center;
+  cursor: default; }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5) {
-  /* line 5, ../sass/partials/_main.scss */
+  /* line 6, ../sass/partials/_main.scss */
   body {
     background: #efefef url("bg@2x.png") top center;
     background-size: 10px 10px; } }
-/* line 10, ../sass/partials/_main.scss */
+/* line 11, ../sass/partials/_main.scss */
 #spinner {
   height: 100%;
   width: 100%;
   position: fixed;
   z-index: 1000; }
 
-/* line 16, ../sass/partials/_main.scss */
+/* line 17, ../sass/partials/_main.scss */
 .debug {
   display: none; }
 
@@ -302,6 +303,11 @@ a {
           background: #4a4444;
           color: white; }
         /* line 99, ../sass/modules/_posts.scss */
+        .post .post-actions li a.disabled {
+          background: #4a4444;
+          color: white;
+          cursor: default; }
+        /* line 104, ../sass/modules/_posts.scss */
         .post .post-actions li a .count {
           position: absolute;
           top: 12px;
@@ -310,12 +316,12 @@ a {
           height: 20px;
           line-height: 20px;
           font-size: 11px; }
-        /* line 108, ../sass/modules/_posts.scss */
+        /* line 113, ../sass/modules/_posts.scss */
         .post .post-actions li a .points {
           display: block;
           font-size: 30px;
           line-height: 50px; }
-        /* line 113, ../sass/modules/_posts.scss */
+        /* line 118, ../sass/modules/_posts.scss */
         .post .post-actions li a .action {
           display: block;
           height: 20px;
@@ -327,7 +333,7 @@ a {
           font-size: 13px;
           color: #f6431a; }
 
-/* line 128, ../sass/modules/_posts.scss */
+/* line 133, ../sass/modules/_posts.scss */
 .post-message {
   background: white;
   padding: 20px;

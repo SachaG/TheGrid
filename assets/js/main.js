@@ -6,15 +6,19 @@ $(function(){
     event.stopPropagation();
 
     var $target = $(event.currentTarget);
+    if($target.hasClass('disabled')) return;
+
     var url = $target.attr('href');
     $.ajax({
         url: url
       , type: 'POST'
       , success: function(){
-        console.log('success');
+        var $points = $target.find('.points');
+        $points.text(($points.text() / 1) + 1);
+        $target.addClass('disabled');
       }
       , error: function(){
-        console.log('error');
+        console.error('Error while trying to upvote post.');
       }
     });
   });

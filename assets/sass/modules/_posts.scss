@@ -96,6 +96,11 @@
 					background:$dark-grey;
 					color:white;
 				}
+				&.disabled{
+					background:$dark-grey;
+					color:white;
+          cursor: default;
+				}
 				.count{
 					position:absolute;
 					top:12px;
