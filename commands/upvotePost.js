@@ -1,5 +1,7 @@
 var db = require('../db');
 
+db.registerIndex('myvotes', {userId: 1, postId: 1});
+
 var addVotingRecord = function(user, post, cb){
   var query = {
       userId: user._id

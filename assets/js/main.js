@@ -15,6 +15,10 @@ $(function(){
       , success: function(){
         var $points = $target.find('.points');
         $points.text(($points.text() / 1) + 1);
+
+        var $action = $target.find('.action');
+        $action.text('Upvoted');
+
         $target.addClass('disabled');
       }
       , error: function(){

@@ -307,7 +307,10 @@ a {
           background: #4a4444;
           color: white;
           cursor: default; }
-        /* line 104, ../sass/modules/_posts.scss */
+          /* line 103, ../sass/modules/_posts.scss */
+          .post .post-actions li a.disabled .action {
+            color: #fff; }
+        /* line 107, ../sass/modules/_posts.scss */
         .post .post-actions li a .count {
           position: absolute;
           top: 12px;
@@ -316,12 +319,12 @@ a {
           height: 20px;
           line-height: 20px;
           font-size: 11px; }
-        /* line 113, ../sass/modules/_posts.scss */
+        /* line 116, ../sass/modules/_posts.scss */
         .post .post-actions li a .points {
           display: block;
           font-size: 30px;
           line-height: 50px; }
-        /* line 118, ../sass/modules/_posts.scss */
+        /* line 121, ../sass/modules/_posts.scss */
         .post .post-actions li a .action {
           display: block;
           height: 20px;
@@ -333,7 +336,7 @@ a {
           font-size: 13px;
           color: #f6431a; }
 
-/* line 133, ../sass/modules/_posts.scss */
+/* line 136, ../sass/modules/_posts.scss */
 .post-message {
   background: white;
   padding: 20px;

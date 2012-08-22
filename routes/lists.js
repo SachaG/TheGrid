@@ -1,10 +1,18 @@
-var queries = require('../queries');
+var _ = require('underscore')
+  , queries = require('../queries');
 
 var postList = function(query){
   return function(req, res, next){
     query(function(err, posts){
-      if(err) return next(err);
-      res.render('posts', {posts: posts});
+      if(err) return next(err); //500
+      queries.myVotesByPosts(req.user, posts, function(err, myvotes){
+        if(err) return next(err); //500
+        myvotes.forEach(function(vote){
+          var post = _.find(posts, function(p){ return p._id.toString() === vote.postId.toString(); });
+          post.voted = true;
+        });
+        res.render('posts', {posts: posts});
+      });
     });
   };
 };

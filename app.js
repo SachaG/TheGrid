@@ -25,6 +25,7 @@ app.configure(function(){
     , store: new MongoSession({url: CONFIG.MONGO_URI})
   }));
 
+  app.use(mw.loadUser);
   app.param('post_id', mw.loadPost);
 
   app.use(app.router);
