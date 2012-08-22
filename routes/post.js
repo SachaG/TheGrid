@@ -15,6 +15,15 @@ module.exports = function(app){
     });
   });
 
+  app.post('/posts/:post_id/upvote', function(req, res, next){
+    if(!req.post) return next(); //404
+
+    commands.upvotePost(req.post, function(err){
+      if(err) return res.next(err); //500
+      res.send();
+    });
+  });
+
   app.get('/posts/:post_id/comments/:comment_id', mw.auth, function(req, res, next){
     if(!req.post) return next(); //404
     queries.commentById(req.param('comment_id'), function(err, comment){

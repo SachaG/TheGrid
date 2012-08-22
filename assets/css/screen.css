@@ -60,12 +60,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* line 1, ../sass/partials/_main.scss */
 body {
-  background: #efefef url("../images/bg.png") top center; }
+  background: #efefef url("bg.png") top center; }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5) {
   /* line 5, ../sass/partials/_main.scss */
   body {
-    background: #efefef url("../images/bg@2x.png") top center;
+    background: #efefef url("bg@2x.png") top center;
     background-size: 10px 10px; } }
 /* line 10, ../sass/partials/_main.scss */
 #spinner {
