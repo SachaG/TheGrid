@@ -1,8 +1,11 @@
 var db = require('../db');
 
 module.exports = function(postId, cb){
+  var id = typeof(postId) === 'string'
+    ? db.ObjectId(postId)
+    : postId;
   var query = {
-    postId: new db.ObjectId(postId)
+    postId: id
   };
   db.comments.find(query).toArray(cb);
 };
