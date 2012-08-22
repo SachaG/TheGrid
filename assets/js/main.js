@@ -2,28 +2,29 @@
 
 $(function(){
   $('.upvote-link').click(function(event){
-    event.preventDefault();
-    event.stopPropagation();
-
     var $target = $(event.currentTarget);
-    if($target.hasClass('disabled')) return;
+    if($target.hasClass('voted')) return;
 
     var url = $target.attr('href');
-    $.ajax({
-        url: url
-      , type: 'POST'
-      , success: function(){
-        var $points = $target.find('.points');
-        $points.text(($points.text() / 1) + 1);
+    if(url !== '/login'){
+      event.preventDefault();
+      event.stopPropagation();
+      $.ajax({
+          url: url
+        , type: 'POST'
+        , success: function(){
+          var $points = $target.find('.points');
+          $points.text(($points.text() / 1) + 1);
 
-        var $action = $target.find('.action');
-        $action.text('Upvoted');
+          var $action = $target.find('.action');
+          $action.text('Upvoted');
 
-        $target.addClass('disabled');
-      }
-      , error: function(){
-        console.error('Error while trying to upvote post.');
-      }
-    });
+          $target.addClass('voted');
+        }
+        , error: function(){
+          console.error('Error while trying to upvote post.');
+        }
+      });
+    }
   });
 });

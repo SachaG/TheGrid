@@ -303,12 +303,12 @@ a {
           background: #4a4444;
           color: white; }
         /* line 99, ../sass/modules/_posts.scss */
-        .post .post-actions li a.disabled {
+        .post .post-actions li a.voted {
           background: #4a4444;
           color: white;
           cursor: default; }
           /* line 103, ../sass/modules/_posts.scss */
-          .post .post-actions li a.disabled .action {
+          .post .post-actions li a.voted .action {
             color: #fff; }
         /* line 107, ../sass/modules/_posts.scss */
         .post .post-actions li a .count {
