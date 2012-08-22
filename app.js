@@ -6,7 +6,7 @@ var assets = require('connect-assets')
   , CONFIG = require('./config')
   , routes = require('./routes');
 
-var commit = fs.readFileSync('./.git/refs/heads/master', 'utf-8');
+var commit = ''; //fs.readFileSync('./.git/refs/heads/master', 'utf-8');
 
 var app = express.createServer();
 app.configure(function(){
