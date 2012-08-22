@@ -1,0 +1,23 @@
+mixin post(post)
+  .post
+    ul.post-actions
+      li.post-share
+        a.share-link.icon-share
+          span.action Share
+      li.post-discuss
+        a.discuss-link.icon-comment(href='/posts/#{post._id}')
+          span.count #{post.comments}
+          span.action Discuss
+      li.post-upvote
+        a.upvote-link(href='/posts/#{post._id}/upvote')
+          span.points #{post.votes}
+          span.action Upvote
+    .post-content
+      span.post-rank 1
+      h3.post-heading
+        a.post-title(href=post.url) #{post.headline}
+        span.post-domain
+      p.post-meta
+        | By
+        a.post-author #{post.submitter}
+        span.post-time #{moment(post.submitted).fromNow()}
