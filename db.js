@@ -9,6 +9,7 @@ module.exports = {
     users: db.collection('users')
   , posts: db.collection('posts')
   , comments: db.collection('comments')
+  , myvotes: db.collection('myvotes')
 
   , ObjectId: Mongolian.ObjectId
 

@@ -2,6 +2,10 @@ node_modules
 npm-debug.log
 .DS_Store
 .sass-cache
+<<<<<<< HEAD
 app-ck.js
 
 .DS_Store
+=======
+*-ck.js
+>>>>>>> ae38944eb88f47eeb8014243cdf382945783cbd3

@@ -1,6 +1,9 @@
+var queries = require('../queries');
+
 module.exports = function(req, res, next){
-  if(req.session.username)
+  if(req.user){
     next();
-  else
+  }else{
     res.redirect('/login');
+  }
 };

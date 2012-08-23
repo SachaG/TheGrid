@@ -12,7 +12,7 @@
   , "dependencies": {
       "async": "*"
     , "bcrypt": "*"
-    , "connect-assets": "*"
+    , "connect-assets": "git://github.com/TroyGoode/connect-assets.git"
     , "connect-mongo": "*"
     , "express": "2.x"
     , "jade": "*"

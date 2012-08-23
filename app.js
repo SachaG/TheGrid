@@ -4,9 +4,8 @@ var assets = require('connect-assets')
   , moment = require('moment')
   , MongoSession = require('connect-mongo')(express)
   , CONFIG = require('./config')
+  , mw = require('./middleware')
   , routes = require('./routes');
-
-var commit = ''; //fs.readFileSync('./.git/refs/heads/master', 'utf-8');
 
 var app = express.createServer();
 app.configure(function(){
@@ -26,6 +25,9 @@ app.configure(function(){
     , store: new MongoSession({url: CONFIG.MONGO_URI})
   }));
 
+  app.use(mw.loadUser);
+  app.param('post_id', mw.loadPost);
+
   app.use(app.router);
   app.use(express.errorHandler({
       dumpExceptions: true
@@ -36,7 +38,6 @@ app.configure(function(){
 app.helpers({
     moment: moment
   , error: null
-  , commit: commit
 });
 app.dynamicHelpers({
   loggedIn: function(req){
