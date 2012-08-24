@@ -24,15 +24,16 @@ mixin post(post)
               span.action Upvote
     .post-content
       span.post-rank 1
-      if loggedIn
-        a.upvote-link(href='/posts/#{post._id}/upvote', class=(post.voted ? 'voted' : 'not-voted')) 
-          i.icon-up
-          i.icon-check
-          span Upvote
-      else
-        a.upvote-link(href='/login')
-          i.icon-up
-          span Upvote
+      .post-upvote
+        if loggedIn
+          a.upvote-link(href='/posts/#{post._id}/upvote', class=(post.voted ? 'voted' : 'not-voted')) 
+            i.icon-up
+            i.icon-check
+            span Upvote
+        else
+          a.upvote-link.not-voted(href='/login')
+            i.icon-up
+            span Upvote
       .post-info
         h3.post-heading
           a.post-title(href=post.url) #{post.headline}

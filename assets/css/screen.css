@@ -154,8 +154,16 @@ a {
   width: 320px;
   margin: 0 auto; }
 
+@media screen and (max-width: 520px) {
+  /* line 19, ../sass/partials/_grid.scss */
+  .grid {
+    width: auto;
+    margin: 0;
+    padding: 0 10px; } }
+
 /* line 10, ../sass/modules/_header.scss */
 .header {
+  overflow: hidden;
   background-color: #4a4444;
   margin-bottom: 10px;
   height: 70px;
@@ -170,7 +178,7 @@ a {
   /* line 54, ../sass/partials/_mixins.scss */
   .header:after {
     clear: both; }
-  /* line 16, ../sass/modules/_header.scss */
+  /* line 17, ../sass/modules/_header.scss */
   .header .nav {
     margin: 0;
     padding: 0;
@@ -178,7 +186,7 @@ a {
     overflow: hidden;
     *zoom: 1;
     margin-top: 20px; }
-    /* line 19, ../sass/modules/_header.scss */
+    /* line 20, ../sass/modules/_header.scss */
     .header .nav li {
       list-style-image: none;
       list-style-type: none;
@@ -198,18 +206,18 @@ a {
       /* line 50, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
       .header .nav li.last {
         padding-right: 0; }
-      /* line 22, ../sass/modules/_header.scss */
+      /* line 23, ../sass/modules/_header.scss */
       .header .nav li a {
         color: white;
         font-size: 16px;
         line-height: 26px;
         height: 26px;
         font-weight: normal; }
-  /* line 31, ../sass/modules/_header.scss */
+  /* line 32, ../sass/modules/_header.scss */
   .header .site-nav {
     float: left;
     margin-left: 20px; }
-  /* line 35, ../sass/modules/_header.scss */
+  /* line 36, ../sass/modules/_header.scss */
   .header .logo {
     position: absolute;
     top: 20px;
@@ -222,11 +230,11 @@ a {
     font: 0/0 a;
     text-shadow: none;
     color: transparent; }
-  /* line 49, ../sass/modules/_header.scss */
+  /* line 50, ../sass/modules/_header.scss */
   .header .user-nav {
     float: right;
     margin-right: 10px; }
-    /* line 52, ../sass/modules/_header.scss */
+    /* line 53, ../sass/modules/_header.scss */
     .header .user-nav .submit {
       background: #f6431a;
       display: block;
@@ -247,6 +255,7 @@ a {
     clear: both; }
   /* line 5, ../sass/modules/_posts.scss */
   .post .post-content {
+    position: relative;
     background: #fff;
     padding: 15px;
     margin-bottom: 10px;
@@ -256,11 +265,11 @@ a {
     padding: 0;
     min-height: 40px;
     margin-right: 160px; }
-    /* line 11, ../sass/modules/_posts.scss */
+    /* line 12, ../sass/modules/_posts.scss */
     .post .post-content .post-info {
-      padding: 15px;
+      padding: 13px 15px;
       margin-left: 70px; }
-    /* line 15, ../sass/modules/_posts.scss */
+    /* line 16, ../sass/modules/_posts.scss */
     .post .post-content .post-rank {
       position: absolute;
       top: 0px;
@@ -272,91 +281,96 @@ a {
       text-align: right;
       font-size: 30px;
       color: rgba(0, 0, 0, 0.1); }
-    /* line 28, ../sass/modules/_posts.scss */
-    .post .post-content .upvote-link {
-      display: block;
-      float: left;
-      height: 70px;
-      width: 70px;
-      background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f6f6f6), color-stop(100%, #eaeaea));
-      background: -webkit-linear-gradient(#f6f6f6, #eaeaea);
-      background: -moz-linear-gradient(#f6f6f6, #eaeaea);
-      background: -o-linear-gradient(#f6f6f6, #eaeaea);
-      background: linear-gradient(#f6f6f6, #eaeaea);
-      -webkit-box-shadow: inset 0 1px 0 white, inset -1px 0 1px rgba(0, 0, 0, 0.1);
-      -moz-box-shadow: inset 0 1px 0 white, inset -1px 0 1px rgba(0, 0, 0, 0.1);
-      box-shadow: inset 0 1px 0 white, inset -1px 0 1px rgba(0, 0, 0, 0.1); }
-      /* line 35, ../sass/modules/_posts.scss */
-      .post .post-content .upvote-link i {
-        display: block;
+    /* line 29, ../sass/modules/_posts.scss */
+    .post .post-content .post-upvote {
+      position: absolute;
+      top: 0px;
+      bottom: 0px; }
+      /* line 33, ../sass/modules/_posts.scss */
+      .post .post-content .post-upvote .upvote-link {
         height: 100%;
-        width: 100%;
-        text-align: center;
-        line-height: 70px;
-        color: #b5b0b0;
-        text-shadow: 0px 1px 0px white; }
-        /* line 43, ../sass/modules/_posts.scss */
-        .post .post-content .upvote-link i.icon-check {
+        display: table;
+        float: left;
+        width: 70px;
+        background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f6f6f6), color-stop(100%, #eaeaea));
+        background: -webkit-linear-gradient(#f6f6f6, #eaeaea);
+        background: -moz-linear-gradient(#f6f6f6, #eaeaea);
+        background: -o-linear-gradient(#f6f6f6, #eaeaea);
+        background: linear-gradient(#f6f6f6, #eaeaea);
+        -webkit-box-shadow: inset 0 1px 0 white, inset -1px 0 1px rgba(0, 0, 0, 0.1);
+        -moz-box-shadow: inset 0 1px 0 white, inset -1px 0 1px rgba(0, 0, 0, 0.1);
+        box-shadow: inset 0 1px 0 white, inset -1px 0 1px rgba(0, 0, 0, 0.1); }
+        /* line 40, ../sass/modules/_posts.scss */
+        .post .post-content .post-upvote .upvote-link i {
+          display: table-cell;
+          height: 100%;
+          width: 100%;
+          text-align: center;
+          vertical-align: middle;
+          color: #b5b0b0;
+          text-shadow: 0px 1px 0px white; }
+          /* line 49, ../sass/modules/_posts.scss */
+          .post .post-content .post-upvote .upvote-link i.icon-check {
+            display: none; }
+        /* line 53, ../sass/modules/_posts.scss */
+        .post .post-content .post-upvote .upvote-link span {
           display: none; }
-      /* line 47, ../sass/modules/_posts.scss */
-      .post .post-content .upvote-link span {
-        display: none; }
-      /* line 50, ../sass/modules/_posts.scss */
-      .post .post-content .upvote-link.not-voted:hover {
-        background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e5e5e5), color-stop(100%, #dfdbdb));
-        background: -webkit-linear-gradient(#e5e5e5, #dfdbdb);
-        background: -moz-linear-gradient(#e5e5e5, #dfdbdb);
-        background: -o-linear-gradient(#e5e5e5, #dfdbdb);
-        background: linear-gradient(#e5e5e5, #dfdbdb);
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
-        box-shadow: none;
-        background: #4a4444; }
-        /* line 54, ../sass/modules/_posts.scss */
-        .post .post-content .upvote-link.not-voted:hover i {
-          color: white;
-          text-shadow: none; }
-      /* line 59, ../sass/modules/_posts.scss */
-      .post .post-content .upvote-link.voted {
-        background: #fafafa;
-        cursor: default; }
-        /* line 62, ../sass/modules/_posts.scss */
-        .post .post-content .upvote-link.voted i.icon-up {
-          display: none; }
+        /* line 56, ../sass/modules/_posts.scss */
+        .post .post-content .post-upvote .upvote-link.not-voted:hover {
+          background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e5e5e5), color-stop(100%, #dfdbdb));
+          background: -webkit-linear-gradient(#e5e5e5, #dfdbdb);
+          background: -moz-linear-gradient(#e5e5e5, #dfdbdb);
+          background: -o-linear-gradient(#e5e5e5, #dfdbdb);
+          background: linear-gradient(#e5e5e5, #dfdbdb);
+          -webkit-box-shadow: none;
+          -moz-box-shadow: none;
+          box-shadow: none;
+          background: #4a4444; }
+          /* line 60, ../sass/modules/_posts.scss */
+          .post .post-content .post-upvote .upvote-link.not-voted:hover i {
+            color: white;
+            text-shadow: none; }
         /* line 65, ../sass/modules/_posts.scss */
-        .post .post-content .upvote-link.voted i.icon-check {
-          color: #f6431a;
-          display: block; }
-    /* line 72, ../sass/modules/_posts.scss */
+        .post .post-content .post-upvote .upvote-link.voted {
+          background: #fafafa;
+          cursor: default; }
+          /* line 68, ../sass/modules/_posts.scss */
+          .post .post-content .post-upvote .upvote-link.voted i.icon-up {
+            display: none; }
+          /* line 71, ../sass/modules/_posts.scss */
+          .post .post-content .post-upvote .upvote-link.voted i.icon-check {
+            color: #f6431a;
+            display: table-cell; }
+    /* line 79, ../sass/modules/_posts.scss */
     .post .post-content .post-heading {
-      margin-bottom: 2px; }
-      /* line 74, ../sass/modules/_posts.scss */
+      margin-bottom: 0px; }
+      /* line 81, ../sass/modules/_posts.scss */
       .post .post-content .post-heading .post-title {
         font-size: 20px;
         color: #4a4444;
         font-weight: normal;
         line-height: 1; }
-        /* line 79, ../sass/modules/_posts.scss */
+        /* line 86, ../sass/modules/_posts.scss */
         .post .post-content .post-heading .post-title:hover {
           color: #f6431a; }
-      /* line 83, ../sass/modules/_posts.scss */
+      /* line 90, ../sass/modules/_posts.scss */
       .post .post-content .post-heading .post-domain {
         color: #b5b0b0;
         font-size: 14px; }
-    /* line 88, ../sass/modules/_posts.scss */
+    /* line 95, ../sass/modules/_posts.scss */
     .post .post-content .post-meta {
       font-size: 13px;
       color: #b5b0b0;
-      line-height: 1; }
-  /* line 94, ../sass/modules/_posts.scss */
+      line-height: 1.5; }
+  /* line 101, ../sass/modules/_posts.scss */
   .post .post-actions {
     float: right;
     padding: 0; }
-    /* line 97, ../sass/modules/_posts.scss */
+    /* line 104, ../sass/modules/_posts.scss */
     .post .post-actions li {
       float: left;
       margin-left: 10px; }
-      /* line 100, ../sass/modules/_posts.scss */
+      /* line 107, ../sass/modules/_posts.scss */
       .post .post-actions li a {
         background: #fff;
         padding: 15px;
@@ -375,19 +389,19 @@ a {
         color: #b5b0b0;
         font-size: 36px;
         line-height: 50px; }
-        /* line 146, ../sass/modules/_posts.scss */
+        /* line 153, ../sass/modules/_posts.scss */
         .post .post-actions li a:hover {
           background: #4a4444;
           color: white; }
-        /* line 150, ../sass/modules/_posts.scss */
+        /* line 157, ../sass/modules/_posts.scss */
         .post .post-actions li a.voted {
           background: #4a4444;
           color: white;
           cursor: default; }
-          /* line 154, ../sass/modules/_posts.scss */
+          /* line 161, ../sass/modules/_posts.scss */
           .post .post-actions li a.voted .action {
             color: #fff; }
-        /* line 158, ../sass/modules/_posts.scss */
+        /* line 165, ../sass/modules/_posts.scss */
         .post .post-actions li a .count {
           position: absolute;
           top: 12px;
@@ -396,12 +410,12 @@ a {
           height: 20px;
           line-height: 20px;
           font-size: 11px; }
-        /* line 167, ../sass/modules/_posts.scss */
+        /* line 174, ../sass/modules/_posts.scss */
         .post .post-actions li a .points {
           display: block;
           font-size: 30px;
           line-height: 50px; }
-        /* line 172, ../sass/modules/_posts.scss */
+        /* line 179, ../sass/modules/_posts.scss */
         .post .post-actions li a .action {
           display: block;
           height: 20px;
@@ -413,7 +427,7 @@ a {
           font-size: 13px;
           color: #f6431a; }
 
-/* line 187, ../sass/modules/_posts.scss */
+/* line 194, ../sass/modules/_posts.scss */
 .post-message {
   background: white;
   padding: 20px;
