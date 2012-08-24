@@ -5,9 +5,12 @@ $grid-margin:10px;
 $grid-padding:15px;
 
 .grid{
-	width:960px;
 	width:74%;
 	margin:0 13%;
+}
+.grid-small{
+	width:320px;
+	margin:0 auto;
 }
 
 @mixin grid($name, $breakpoint, $cols, $col-width, $gut-width, $grid-margin){

@@ -6,7 +6,8 @@
 		@include block;
 		padding:0;
 		min-height:$grid-unit - 30px;
-		margin-right:240px;
+		// margin-right:240px;
+		margin-right:160px;
 		.post-info{
 			padding:$grid-padding;
 			margin-left:70px;
@@ -24,12 +25,12 @@
 			// font-weight:bold;
 			color:black(0.1);
 		}
-		.upvote-link, .upvoted{
+		.upvote-link{
 			display:block;
 			float:left;
 			height:$grid-unit;
 			width:$grid-unit;
-			@include background(linear-gradient(#f6f6f6, #f0f0f0));
+			@include background(linear-gradient(#f6f6f6, #eaeaea));
 			@include box-shadow(inset 0 1px 0 white, inset -1px 0 1px black(0.1));
 			i{
 				display:block;
@@ -38,18 +39,33 @@
 				text-align:center;
 				line-height:$grid-unit;
 				color:$light-text;
-				text-shadow:0px 1px 0px white;	
+				text-shadow:0px 1px 0px white;
+				&.icon-check{
+					display:none;
+				}
 			}
 			span{
 				display:none;
 			}
-			&:hover{
+			&.not-voted:hover{
 				@include background(linear-gradient(#e5e5e5, #dfdbdb));
 				@include box-shadow(none);
 				background:$dark-grey;
 				i{
 					color:white;
 					text-shadow:none;
+				}
+			}
+			&.voted{
+				background: #fafafa;
+				cursor:default;
+				i.icon-up{
+					display:none;
+				}
+				i.icon-check{
+					// color:$lighter-text;
+					color:$red;
+					display:block;
 				}
 			}
 		}
