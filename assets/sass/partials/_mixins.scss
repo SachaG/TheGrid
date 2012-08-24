@@ -2,6 +2,7 @@
 	background:#fff;
 	padding:$grid-padding;
 	margin-bottom:$grid-margin;
+	@include box-shadow(0 1px 1px black(0.15));
 }
 @mixin border-box{
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */

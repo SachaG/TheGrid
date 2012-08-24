@@ -23,10 +23,22 @@ mixin post(post)
             span.action Upvote
     .post-content
       span.post-rank 1
-      h3.post-heading
-        a.post-title(href=post.url) #{post.headline}
-        span.post-domain
-      p.post-meta
-        | By
-        a.post-author #{post.submitter}
-        span.post-time #{moment(post.submitted).fromNow()}
+      if loggedIn
+        if post.voted
+          span.upvoted
+        else
+          a.upvote-link.icon-up(href='/posts/#{post._id}/upvote', class=(post.voted ? 'voted' : null)) Upvote
+      else
+        a.upvote-link(href='/login')
+          i.icon-up
+          span Upvote
+      .post-info
+        h3.post-heading
+          a.post-title(href=post.url) #{post.headline}
+          span.post-domain
+        p.post-meta
+          span.points #{post.votes} points 
+          | by 
+          a.post-author(href='#') #{post.submitter} 
+          span.post-time #{moment(post.submitted).fromNow()}, 
+          a.comments(href='/posts/#{post._id}') #{post.comments} comments

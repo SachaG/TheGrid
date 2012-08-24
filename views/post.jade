@@ -1,39 +1,17 @@
 extends layout
+include mixins/post
 
-mixin post(post)
-  .post
-    ul.post-actions
-      li.post-share
-        a.share-link.icon-share
-          span.action Share
-      li.post-discuss
-        a.discuss-link.icon-comment(href='/posts/#{post._id}')
-          span.count #{post.comments}
-          span.action Discuss
-      li.post-upvote
-        a.upvote-link
-          span.points #{post.votes}
-          span.action Upvote  
-    .post-content
-      span.post-rank 1
-      h3.post-heading
-        a.post-title(href=post.url) #{post.headline}
-        span.post-domain
-      p.post-meta
-        | By 
-        a.post-author #{post.submitter} 
-        span.post-time #{moment(post.submitted).fromNow()}
 
 mixin comment(comment, post)
   li.comment
     .comment-content
       .comment-actions
-        a.upvote.icon-up{:href => "#"} upvote
-        a.downvote.icon-down{:href => "#"} downvote
+        a.upvote.icon-up upvote
+        a.downvote.icon-down downvote
       .comment-meta
         a.comment-username #{comment.item.submitter}
         span.comment-time #{moment(comment.item.submitted).fromNow()}
-        a.comment-permalink.icon-link{:href => "#"} link
+        a.comment-permalink.icon-link link
       .comment-text #{comment.item.comment}  
       if loggedIn
         a.comment-reply(href='/posts/#{post._id}/comments/#{comment.item._id}') Reply
