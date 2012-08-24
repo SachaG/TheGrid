@@ -15,7 +15,13 @@ html(lang="en")
     header.header.grid
       h1.logo
         a(href='/') The Grid
-      ul.nav.site-nav
+      a.mobile.mobile-button.menu(href='#')
+        i.icon-menu
+        span Menu
+      a.mobile.mobile-button.submit(href='#')
+        i.icon-plus
+        span Submit
+      ul.nav.site-nav.desktop
        if url === '/'
          li.selected: a(href='/') Top
        else
@@ -36,7 +42,7 @@ html(lang="en")
          li.selected: a(href='/jobs') Jobs
        else
          li: a(href='/jobs') Jobs
-      ul.nav.user-nav
+      ul.nav.user-nav.desktop
        if loggedIn
          li: a(href='/logout') Log Out
        else

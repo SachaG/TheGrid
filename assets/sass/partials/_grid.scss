@@ -16,13 +16,7 @@ $grid-padding:15px;
 $break-small: 520px;
 $break-large: 1200px;
 
-.grid {
-  @media screen and (max-width: $break-small) {
-	width:auto;
-	margin:0;
-	padding:0 10px;
-  }
-}
+
 
 @mixin grid($name, $breakpoint, $cols, $col-width, $gut-width, $grid-margin){
 	// @debug $breakpoint;

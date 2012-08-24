@@ -56,4 +56,36 @@
 			padding:0px 10px;
 		}
 	}
+	.mobile-button{
+		position:relative;
+		display:block;
+		margin-top:10px;
+		background:$red;
+		color:white;
+		height:50px;
+		width:50px;
+		i{
+			position:absolute;
+			width:100%;
+			text-align:center;
+			line-height:50px;
+			height:50px;
+			font-size:24px;
+		}
+		span{
+			display:none;
+		}
+		&.menu{
+			float:left;
+		}
+		&.submit{
+			float:right;
+		}
+		&:hover{
+			background:white;
+			i{
+				color:$red;
+			}
+		}
+	}
 }

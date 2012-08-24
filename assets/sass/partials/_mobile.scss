@@ -1,0 +1,32 @@
+.mobile{
+	display:none !important;
+}
+
+@media screen and (max-width: $break-small) {
+	.mobile{
+		display:block !important;
+	}
+	.desktop{
+		display:none !important;
+	}
+	.grid {
+		width:auto;
+		margin-left:0;
+		margin-right:0;
+		padding:0 10px;
+	}
+	.post{
+		.post-content{
+			margin-right:0;
+			.upvote-link{
+				width:30px;
+			}
+			.post-info{
+				margin-left:30px;
+			}
+		}
+		.post-actions{
+			display:none;
+		}
+	}
+}
