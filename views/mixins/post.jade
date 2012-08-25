@@ -1,46 +1,54 @@
 mixin post(post)
-  .post
-    ul.post-actions
-      li.post-share
-        a.share-link.icon-share
-          span.action Share
-      li.post-discuss
-        a.discuss-link.icon-comment(href='/posts/#{post._id}')
-          span.count #{post.comments}
-          span.action Discuss
-      //    
-        if loggedIn
-          li.post-upvote
-            a.upvote-link(href='/posts/#{post._id}/upvote', class=(post.voted ? 'voted' : null))
-              span.points #{post.votes}
-              if post.voted
-                span.action Upvoted
-              else
-                span.action Upvote
-        else
-          li.post-upvote
-            a.upvote-link(href='/login')
-              span.points #{post.votes}
-              span.action Upvote
-    .post-content
-      span.post-rank 1
-      .post-upvote
-        if loggedIn
-          a.upvote-link(href='/posts/#{post._id}/upvote', class=(post.voted ? 'voted' : 'not-voted')) 
-            i.icon-up
-            i.icon-check
-            span Upvote
-        else
-          a.upvote-link.not-voted(href='/login')
-            i.icon-up
-            span Upvote
-      .post-info
-        h3.post-heading
-          a.post-title(href=post.url) #{post.headline}
-          span.post-domain
-        p.post-meta
-          span.points #{post.votes} points 
-          | by 
-          a.post-author(href='#') #{post.submitter} 
-          span.post-time #{moment(post.submitted).fromNow()}, 
-          a.comments(href='/posts/#{post._id}') #{post.comments} comments
+	.post
+		ul.post-actions
+			li.post-share.desktop
+				a.share-link
+					i.icon-share
+					span.action Share
+			li.post-discuss
+				a.discuss-link(href='/posts/#{post._id}')
+					i.icon-comment
+					span.count #{post.comments}
+					span.action Discuss
+			li.post-more.mobile
+				a.text-link
+					i.icon-share
+					span.action Text    
+			//    
+				if loggedIn
+					li.post-upvote
+						a.upvote-link(href='/posts/#{post._id}/upvote', class=(post.voted ? 'voted' : null))
+							span.points #{post.votes}
+							if post.voted
+								span.action Upvoted
+							else
+								span.action Upvote
+				else
+					li.post-upvote
+						a.upvote-link(href='/login')
+							span.points #{post.votes}
+							span.action Upvote
+		.post-content
+			span.post-rank 1
+			.post-upvote
+				if loggedIn
+					a.upvote-link(href='/posts/#{post._id}/upvote', class=(post.voted ? 'voted' : 'not-voted')) 
+						i.icon-up
+						i.icon-check
+						span Upvote
+				else
+					a.upvote-link.not-voted(href='/login')
+						i.icon-up
+						span Upvote
+			.post-info
+				h3.post-heading
+					a.post-title(href=post.url) #{post.headline} 
+					span.post-domain news.ycombinator.com
+				p.post-meta
+					span.points #{post.votes} points 
+					| by 
+					a.post-author(href='#') #{post.submitter} 
+					span.post-time #{moment(post.submitted).fromNow()} 
+					span.comments
+						|, 
+						a(href='/posts/#{post._id}') #{post.comments} comments

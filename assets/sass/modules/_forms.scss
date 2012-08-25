@@ -14,6 +14,7 @@ form{
 	}
 	input[type="text"], input[type="password"], textarea{
 		display:block;
+		padding:5px 6px;
 		width:100%;
 		font-size:14px;
 		@include border-box;
@@ -27,12 +28,10 @@ form{
 	}
 	input[type="text"], input[type="password"]{
 		height:30px;
-		line-height:24px;
-		padding:5px 10px;
+		line-height:20px;
 	}
 	textarea{
 		min-height:100px;
-		padding:5px 10px;
 		line-height:1.4;
 	}
 	input[type="submit"], button, .button, .btn{

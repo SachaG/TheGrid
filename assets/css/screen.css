@@ -60,13 +60,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* line 1, ../sass/partials/_main.scss */
 body {
-  background: #efefef url("bg.png") top center;
+  background: #efefef url("/img/bg.png") top center;
   cursor: default; }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5) {
   /* line 6, ../sass/partials/_main.scss */
   body {
-    background: #efefef url("bg@2x.png") top center;
+    background: #efefef url("/img/bg@2x.png") top center;
     background-size: 10px 10px; } }
 /* line 11, ../sass/partials/_main.scss */
 #spinner {
@@ -225,53 +225,26 @@ a {
     left: 50%;
     margin-left: -65px;
     width: 130px;
-    height: 26px;
-    background-position: center center;
-    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMTMzLjMzMnB4IiBoZWlnaHQ9IjI1LjkwM3B4IiB2aWV3Qm94PSIwIDAgMTMzLjMzMiAyNS45MDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDEzMy4zMzIgMjUuOTAzIg0KCSB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0xMy44NCwyMi4zMjdIOC43MjZWNi45ODRINC40OTlWMi42NTJoMTMuNTY5djQuMzMySDEzLjg0VjIyLjMyN3oiLz4NCgk8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNMzIuNDE4LDEwLjI0NlYyLjY1Mmg1LjExNHYxOS42NzRoLTUuMTE0di04LjA2M2gtNy4zODR2OC4wNjNoLTUuMTE1VjIuNjUyaDUuMTE1djcuNTkzSDMyLjQxOHoiLz4NCgk8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNNDUuOTg3LDYuOTg0djMuMjg4aDUuNzY3djQuMzMyaC01Ljc2N3YzLjM5Mmg2LjA4djQuMzMySDQwLjg3M1YyLjY1MmgxMS4xOTR2NC4zMzJINDUuOTg3eiIvPg0KCTxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik04My43OTYsMTEuMzQxYy0wLjA1MiwyLjg3MS0wLjI2MSw1LjMyMy0yLjAwOSw3Ljc3NmMtMS45MzEsMi42ODgtNC44MjgsMy44NjItOC4xMTUsMy44NjINCgkJYy02LjE4NCwwLTEwLjQ5LTQuMjAyLTEwLjQ5LTEwLjM4NkM2My4xODIsNi4yMDEsNjcuNTE0LDIsNzMuODU0LDJjNC4wNDQsMCw3LjE3NiwxLjgyNyw4Ljg3Miw1LjUwNmwtNC44NTMsMi4wMzUNCgkJQzc3LjE2OCw3LjY2Miw3NS42ODEsNi40MSw3My42Miw2LjQxYy0zLjM2NiwwLTUuMTE0LDMuMjA5LTUuMTE0LDYuMjFjMCwzLjA1MywxLjgyNyw2LjE1OCw1LjE5Miw2LjE1OA0KCQljMi4yMTgsMCwzLjkxNS0xLjE0OCw0LjEyMy0zLjQxOGgtNC4xNzV2LTQuMDE5SDgzLjc5NnoiLz4NCgk8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNMTAyLjUwNSwyMi4zMjdoLTYuMzY3bC00LjgyNy03LjU2N2gtMC4wNTJ2Ny41NjdoLTUuMTE0VjIuNjUyaDcuNjQ2YzMuODg4LDAsNi44MzYsMS44NTMsNi44MzYsNi4wNTQNCgkJYzAsMi43MTMtMS41MTQsNS4wNjItNC4zMDYsNS41NThMMTAyLjUwNSwyMi4zMjd6IE05MS4yNTksMTEuNDcyaDAuNDk2YzEuNjcsMCwzLjU0OC0wLjMxMywzLjU0OC0yLjQ1M3MtMS44NzgtMi40NTMtMy41NDgtMi40NTMNCgkJaC0wLjQ5NlYxMS40NzJ6Ii8+DQoJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTEwOS4wMDIsMjIuMzI3aC01LjExNFYyLjY1Mmg1LjExNFYyMi4zMjd6Ii8+DQoJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTExMi4zNDIsMi42NTJoNy4yNTRjNS40NzksMCw5Ljk5NCw0LjMwNSw5Ljk5NCw5LjgzN2MwLDUuNTMyLTQuNTQsOS44MzctOS45OTQsOS44MzdoLTcuMjU0VjIuNjUyeg0KCQkgTTExNy40NTYsMTcuOTk1aDEuMTQ4YzMuMDUzLDAsNS42NjMtMS42Nyw1LjY2My01LjUwNWMwLTMuNTIzLTIuMzIzLTUuNTA2LTUuNjEtNS41MDZoLTEuMjAxVjE3Ljk5NXoiLz4NCjwvZz4NCjwvc3ZnPg0K);
-    font: 0/0 a;
-    text-shadow: none;
-    color: transparent; }
-  /* line 50, ../sass/modules/_header.scss */
+    height: 26px; }
+    /* line 43, ../sass/modules/_header.scss */
+    .header .logo a {
+      display: block;
+      height: 100%;
+      width: 100%;
+      background-position: center center;
+      background-image: url("/img/thegrid.svg");
+      font: 0/0 a;
+      text-shadow: none;
+      color: transparent; }
+  /* line 56, ../sass/modules/_header.scss */
   .header .user-nav {
     float: right;
     margin-right: 10px; }
-    /* line 53, ../sass/modules/_header.scss */
+    /* line 59, ../sass/modules/_header.scss */
     .header .user-nav .submit {
       background: #f6431a;
       display: block;
       padding: 0px 10px; }
-  /* line 59, ../sass/modules/_header.scss */
-  .header .mobile-button {
-    position: relative;
-    display: block;
-    margin-top: 10px;
-    background: #f6431a;
-    color: white;
-    height: 50px;
-    width: 50px; }
-    /* line 67, ../sass/modules/_header.scss */
-    .header .mobile-button i {
-      position: absolute;
-      width: 100%;
-      text-align: center;
-      line-height: 50px;
-      height: 50px;
-      font-size: 24px; }
-    /* line 75, ../sass/modules/_header.scss */
-    .header .mobile-button span {
-      display: none; }
-    /* line 78, ../sass/modules/_header.scss */
-    .header .mobile-button.menu {
-      float: left; }
-    /* line 81, ../sass/modules/_header.scss */
-    .header .mobile-button.submit {
-      float: right; }
-    /* line 84, ../sass/modules/_header.scss */
-    .header .mobile-button:hover {
-      background: white; }
-      /* line 86, ../sass/modules/_header.scss */
-      .header .mobile-button:hover i {
-        color: #f6431a; }
 
 /* line 1, ../sass/modules/_posts.scss */
 .post {
@@ -588,6 +561,7 @@ form {
   /* line 15, ../sass/modules/_forms.scss */
   form input[type="text"], form input[type="password"], form textarea {
     display: block;
+    padding: 5px 6px;
     width: 100%;
     font-size: 14px;
     -webkit-box-sizing: border-box;
@@ -604,23 +578,21 @@ form {
     -webkit-box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.2);
     box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.2); }
-    /* line 23, ../sass/modules/_forms.scss */
+    /* line 24, ../sass/modules/_forms.scss */
     form input[type="text"]:focus, form input[type="password"]:focus, form textarea:focus {
       outline: none;
       -webkit-box-shadow: inset 0px 0px 0px 1px rgba(246, 67, 26, 0.5), 0px 0px 5px 0px rgba(246, 67, 26, 0.2);
       -moz-box-shadow: inset 0px 0px 0px 1px rgba(246, 67, 26, 0.5), 0px 0px 5px 0px rgba(246, 67, 26, 0.2);
       box-shadow: inset 0px 0px 0px 1px rgba(246, 67, 26, 0.5), 0px 0px 5px 0px rgba(246, 67, 26, 0.2); }
-  /* line 28, ../sass/modules/_forms.scss */
+  /* line 29, ../sass/modules/_forms.scss */
   form input[type="text"], form input[type="password"] {
     height: 30px;
-    line-height: 24px;
-    padding: 5px 10px; }
+    line-height: 20px; }
   /* line 33, ../sass/modules/_forms.scss */
   form textarea {
     min-height: 100px;
-    padding: 5px 10px;
     line-height: 1.4; }
-  /* line 38, ../sass/modules/_forms.scss */
+  /* line 37, ../sass/modules/_forms.scss */
   form input[type="submit"], form button, form .button, form .btn {
     background: #f6431a;
     color: white;
@@ -655,21 +627,102 @@ form {
     display: none !important; }
 
   /* line 12, ../sass/partials/_mobile.scss */
-  .grid {
+  .grid, .grid-small {
     width: auto;
     margin-left: 0;
     margin-right: 0;
     padding: 0 10px; }
 
-  /* line 19, ../sass/partials/_mobile.scss */
+  /* line 18, ../sass/partials/_mobile.scss */
+  .header {
+    height: 50px; }
+    /* line 20, ../sass/partials/_mobile.scss */
+    .header .logo {
+      top: 12px; }
+    /* line 23, ../sass/partials/_mobile.scss */
+    .header .mobile-button {
+      position: relative;
+      display: block;
+      margin-top: 10px;
+      background: #f6431a;
+      color: white;
+      height: 30px;
+      width: 40px; }
+      /* line 31, ../sass/partials/_mobile.scss */
+      .header .mobile-button i {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        line-height: 30px;
+        height: 30px;
+        font-size: 18px; }
+      /* line 39, ../sass/partials/_mobile.scss */
+      .header .mobile-button span {
+        display: none; }
+      /* line 42, ../sass/partials/_mobile.scss */
+      .header .mobile-button.menu {
+        float: left; }
+      /* line 45, ../sass/partials/_mobile.scss */
+      .header .mobile-button.submit {
+        float: right; }
+      /* line 48, ../sass/partials/_mobile.scss */
+      .header .mobile-button:hover {
+        background: white; }
+        /* line 50, ../sass/partials/_mobile.scss */
+        .header .mobile-button:hover i {
+          color: #f6431a; }
+
+  /* line 57, ../sass/partials/_mobile.scss */
   .post .post-content {
-    margin-right: 0; }
-    /* line 21, ../sass/partials/_mobile.scss */
+    margin-right: 50px;
+    min-height: 90px; }
+    /* line 60, ../sass/partials/_mobile.scss */
     .post .post-content .upvote-link {
       width: 30px; }
-    /* line 24, ../sass/partials/_mobile.scss */
+    /* line 63, ../sass/partials/_mobile.scss */
     .post .post-content .post-info {
-      margin-left: 30px; }
-  /* line 28, ../sass/partials/_mobile.scss */
-  .post .post-actions {
-    display: none; } }
+      margin-left: 30px;
+      padding: 6px 4px 6px 10px; }
+    /* line 67, ../sass/partials/_mobile.scss */
+    .post .post-content .post-heading {
+      line-height: 1.4; }
+      /* line 69, ../sass/partials/_mobile.scss */
+      .post .post-content .post-heading .post-title {
+        display: block;
+        margin-bottom: 3px;
+        font-size: 18px; }
+      /* line 74, ../sass/partials/_mobile.scss */
+      .post .post-content .post-heading .post-domain {
+        display: block;
+        margin-bottom: 3px;
+        font-size: 13px; }
+    /* line 80, ../sass/partials/_mobile.scss */
+    .post .post-content .post-meta {
+      font-size: 12px; }
+      /* line 82, ../sass/partials/_mobile.scss */
+      .post .post-content .post-meta .comments {
+        display: none; }
+  /* line 88, ../sass/partials/_mobile.scss */
+  .post .post-actions li {
+    float: none; }
+    /* line 90, ../sass/partials/_mobile.scss */
+    .post .post-actions li a {
+      height: 40px;
+      width: 40px;
+      font-size: 30px; }
+      /* line 94, ../sass/partials/_mobile.scss */
+      .post .post-actions li a i {
+        display: block;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        line-height: 44px;
+        text-align: center; }
+      /* line 104, ../sass/partials/_mobile.scss */
+      .post .post-actions li a .count {
+        top: 9px; }
+      /* line 107, ../sass/partials/_mobile.scss */
+      .post .post-actions li a .action {
+        display: none; } }

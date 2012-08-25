@@ -158,10 +158,10 @@
 			&.voted{
 				background:$dark-grey;
 				color:white;
-      cursor: default;
-      .action{
-        color: #fff;
-      }
+				cursor: default;
+				.action{
+					color: #fff;
+				}
 			}
 			.count{
 				position:absolute;
