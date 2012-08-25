@@ -12,7 +12,7 @@
 	margin-right:160px;
 	.post-info{
 		padding:$grid-padding - 2px $grid-padding;
-		margin-left:$grid-unit;
+		margin-left:30px;
 	}
 	.post-rank{
 		position:absolute;
@@ -35,10 +35,11 @@
 			height:100%;
 			display:table;
 			float:left;
-			width:$grid-unit;
+			width:30px;
 			@include background(linear-gradient(#f6f6f6, #eaeaea));
 			@include box-shadow(inset 0 1px 0 white, inset -1px 0 1px black(0.1));
 			i{
+				font-size:12px;
 				display:table-cell;
 				height:100%;
 				width:100%;
@@ -118,6 +119,9 @@
 			color:$light-text;
 			font-size:36px;
 			line-height:50px;
+			// @include background(linear-gradient(/*right top,*/ #f6f6f6, #e3e3e3));
+			// @include box-shadow(inset 0 1px 0 white, 0 1px 1px black(0.15));
+			// background:#fffce6;
 			// &.medium{
 			// 	background-color:red(0.05);
 			// }
@@ -151,12 +155,21 @@
 			// &.gigahot{
 			// 	color:red(1);					
 			// }
+			&.share-link{
+				color:$blue;
+			}
+			&.discuss-link{
+				color:$green;
+			}
+			&.more-link{
+				color:$blue;
+			}
 			&:hover{
-				background:$dark-grey;
+				background:$highlight-color;
 				color:white;
 			}
 			&.voted{
-				background:$dark-grey;
+				background:$highlight-color;
 				color:white;
 				cursor: default;
 				.action{
@@ -186,7 +199,7 @@
 				bottom:5px;
 				left:0px;
 				font-size:13px;
-				color:$red;
+				// color:$red;
 			}
 		}
 	}

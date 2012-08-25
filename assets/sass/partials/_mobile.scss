@@ -65,20 +65,21 @@
 				padding:6px 4px 6px 8px;
 			}
 			.post-heading{
-				line-height:1.4;
 				.post-title{
+					line-height:1.2;
 					display:block;
 					margin-bottom:3px;
 					font-size:18px;
 				}
 				.post-domain{
+					line-height:1;
 					display:block;
-					margin-bottom:3px;
+					margin-bottom:2px;
 					font-size:13px;
 				}	
 			}
 			.post-meta{
-				font-size:12px;
+				font-size:11px;
 				.comments{
 					display:none;
 				}
@@ -97,7 +98,7 @@
 				a{
 					height:40px;
 					width:40px;
-					font-size:30px;
+					font-size:30px;				
 					i{
 						display:block;
 						position:absolute;
