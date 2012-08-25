@@ -69,12 +69,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* line 1, ../sass/partials/_main.scss */
 body {
-  background: #fefefe url("/img/bg.png") top center; }
+  background: #e9f3f7; }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5) {
   /* line 6, ../sass/partials/_main.scss */
   body {
-    background: #f3f3f3 url("/img/bg@2x.png") top center;
     background-size: 10px 10px; } }
 /* line 11, ../sass/partials/_main.scss */
 #spinner {
@@ -173,6 +172,7 @@ a {
 /* line 10, ../sass/modules/_header.scss */
 .header {
   overflow: hidden;
+  background: #4e555d url("/img/bg-header.png") top center;
   background-color: #4e555d;
   margin-bottom: 10px;
   height: 70px;
@@ -187,7 +187,7 @@ a {
   /* line 56, ../sass/partials/_mixins.scss */
   .header:after {
     clear: both; }
-  /* line 17, ../sass/modules/_header.scss */
+  /* line 18, ../sass/modules/_header.scss */
   .header .nav {
     margin: 0;
     padding: 0;
@@ -195,7 +195,7 @@ a {
     overflow: hidden;
     *zoom: 1;
     margin-top: 20px; }
-    /* line 20, ../sass/modules/_header.scss */
+    /* line 21, ../sass/modules/_header.scss */
     .header .nav li {
       list-style-image: none;
       list-style-type: none;
@@ -215,18 +215,18 @@ a {
       /* line 50, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
       .header .nav li.last {
         padding-right: 0; }
-      /* line 23, ../sass/modules/_header.scss */
+      /* line 24, ../sass/modules/_header.scss */
       .header .nav li a {
         color: white;
         font-size: 16px;
         line-height: 26px;
         height: 26px;
         font-weight: normal; }
-  /* line 32, ../sass/modules/_header.scss */
+  /* line 33, ../sass/modules/_header.scss */
   .header .site-nav {
     float: left;
     margin-left: 20px; }
-  /* line 36, ../sass/modules/_header.scss */
+  /* line 37, ../sass/modules/_header.scss */
   .header .logo {
     position: absolute;
     top: 20px;
@@ -234,7 +234,7 @@ a {
     margin-left: -65px;
     width: 130px;
     height: 26px; }
-    /* line 43, ../sass/modules/_header.scss */
+    /* line 44, ../sass/modules/_header.scss */
     .header .logo a {
       display: block;
       height: 100%;
@@ -244,11 +244,11 @@ a {
       font: 0/0 a;
       text-shadow: none;
       color: transparent; }
-  /* line 56, ../sass/modules/_header.scss */
+  /* line 57, ../sass/modules/_header.scss */
   .header .user-nav {
     float: right;
     margin-right: 10px; }
-    /* line 59, ../sass/modules/_header.scss */
+    /* line 60, ../sass/modules/_header.scss */
     .header .user-nav .submit {
       background: #f36c3d;
       display: block;
@@ -301,15 +301,13 @@ a {
       display: table;
       float: left;
       width: 30px;
-      background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f6f6f6), color-stop(100%, #eaeaea));
-      background: -webkit-linear-gradient(#f6f6f6, #eaeaea);
-      background: -moz-linear-gradient(#f6f6f6, #eaeaea);
-      background: -o-linear-gradient(#f6f6f6, #eaeaea);
-      background: linear-gradient(#f6f6f6, #eaeaea);
-      -webkit-box-shadow: inset 0 1px 0 white, inset -1px 0 1px rgba(0, 0, 0, 0.1);
-      -moz-box-shadow: inset 0 1px 0 white, inset -1px 0 1px rgba(0, 0, 0, 0.1);
-      box-shadow: inset 0 1px 0 white, inset -1px 0 1px rgba(0, 0, 0, 0.1); }
-      /* line 41, ../sass/modules/_posts.scss */
+      background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f3f6f8), color-stop(100%, #dfe3e5));
+      background: -webkit-linear-gradient(#f3f6f8, #dfe3e5);
+      background: -moz-linear-gradient(#f3f6f8, #dfe3e5);
+      background: -o-linear-gradient(#f3f6f8, #dfe3e5);
+      background: linear-gradient(#f3f6f8, #dfe3e5);
+      background: #d8e9f5; }
+      /* line 42, ../sass/modules/_posts.scss */
       .post-content .post-upvote .upvote-link i {
         font-size: 12px;
         display: table-cell;
@@ -317,71 +315,65 @@ a {
         width: 100%;
         text-align: center;
         vertical-align: middle;
-        color: #b5b0b0;
+        color: #92b5c3;
         text-shadow: 0px 1px 0px white; }
-        /* line 51, ../sass/modules/_posts.scss */
+        /* line 52, ../sass/modules/_posts.scss */
         .post-content .post-upvote .upvote-link i.icon-check {
           display: none; }
-      /* line 55, ../sass/modules/_posts.scss */
+      /* line 56, ../sass/modules/_posts.scss */
       .post-content .post-upvote .upvote-link span {
         display: none; }
-      /* line 58, ../sass/modules/_posts.scss */
+      /* line 59, ../sass/modules/_posts.scss */
       .post-content .post-upvote .upvote-link.not-voted:hover {
-        background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e5e5e5), color-stop(100%, #dfdbdb));
-        background: -webkit-linear-gradient(#e5e5e5, #dfdbdb);
-        background: -moz-linear-gradient(#e5e5e5, #dfdbdb);
-        background: -o-linear-gradient(#e5e5e5, #dfdbdb);
-        background: linear-gradient(#e5e5e5, #dfdbdb);
         -webkit-box-shadow: none;
         -moz-box-shadow: none;
         box-shadow: none;
-        background: #4a4444; }
+        background: #4e555d; }
         /* line 62, ../sass/modules/_posts.scss */
         .post-content .post-upvote .upvote-link.not-voted:hover i {
           color: white;
           text-shadow: none; }
       /* line 67, ../sass/modules/_posts.scss */
       .post-content .post-upvote .upvote-link.voted {
-        background: #fafafa;
         cursor: default; }
-        /* line 70, ../sass/modules/_posts.scss */
+        /* line 69, ../sass/modules/_posts.scss */
         .post-content .post-upvote .upvote-link.voted i.icon-up {
           display: none; }
-        /* line 73, ../sass/modules/_posts.scss */
+        /* line 72, ../sass/modules/_posts.scss */
         .post-content .post-upvote .upvote-link.voted i.icon-check {
           color: #f36c3d;
           display: table-cell; }
-  /* line 81, ../sass/modules/_posts.scss */
+  /* line 79, ../sass/modules/_posts.scss */
   .post-content .post-heading {
     margin-bottom: 0px; }
-    /* line 83, ../sass/modules/_posts.scss */
+    /* line 81, ../sass/modules/_posts.scss */
     .post-content .post-heading .post-title {
       font-size: 20px;
       color: #4a4444;
       font-weight: normal;
       line-height: 1; }
-      /* line 88, ../sass/modules/_posts.scss */
+      /* line 86, ../sass/modules/_posts.scss */
       .post-content .post-heading .post-title:hover {
         color: #f36c3d; }
-    /* line 92, ../sass/modules/_posts.scss */
+    /* line 90, ../sass/modules/_posts.scss */
     .post-content .post-heading .post-domain {
-      color: #b5b0b0;
+      color: #b3c1c6;
       font-size: 14px; }
-  /* line 97, ../sass/modules/_posts.scss */
+  /* line 95, ../sass/modules/_posts.scss */
   .post-content .post-meta {
     font-size: 13px;
-    color: #b5b0b0;
+    color: #b3c1c6;
     line-height: 1.5; }
 
-/* line 103, ../sass/modules/_posts.scss */
+/* line 101, ../sass/modules/_posts.scss */
 .post-actions {
   float: right;
   padding: 0; }
-  /* line 106, ../sass/modules/_posts.scss */
+  /* line 104, ../sass/modules/_posts.scss */
   .post-actions li {
     float: left;
     margin-left: 10px; }
-    /* line 109, ../sass/modules/_posts.scss */
+    /* line 107, ../sass/modules/_posts.scss */
     .post-actions li a {
       position: relative;
       display: block;
@@ -391,31 +383,31 @@ a {
       line-height: 70px;
       vertical-align: baseline;
       text-align: center;
-      color: #b5b0b0;
+      color: #b3c1c6;
       font-size: 36px;
       line-height: 50px; }
-      /* line 158, ../sass/modules/_posts.scss */
+      /* line 156, ../sass/modules/_posts.scss */
       .post-actions li a.share-link {
         color: #7ac0e4; }
-      /* line 161, ../sass/modules/_posts.scss */
+      /* line 159, ../sass/modules/_posts.scss */
       .post-actions li a.discuss-link {
         color: #a3d06d; }
-      /* line 164, ../sass/modules/_posts.scss */
+      /* line 162, ../sass/modules/_posts.scss */
       .post-actions li a.more-link {
         color: #7ac0e4; }
-      /* line 167, ../sass/modules/_posts.scss */
+      /* line 165, ../sass/modules/_posts.scss */
       .post-actions li a:hover {
         background: #4e555d;
         color: white; }
-      /* line 171, ../sass/modules/_posts.scss */
+      /* line 169, ../sass/modules/_posts.scss */
       .post-actions li a.voted {
         background: #4e555d;
         color: white;
         cursor: default; }
-        /* line 175, ../sass/modules/_posts.scss */
+        /* line 173, ../sass/modules/_posts.scss */
         .post-actions li a.voted .action {
           color: #fff; }
-      /* line 179, ../sass/modules/_posts.scss */
+      /* line 177, ../sass/modules/_posts.scss */
       .post-actions li a .count {
         position: absolute;
         top: 12px;
@@ -424,12 +416,12 @@ a {
         height: 20px;
         line-height: 20px;
         font-size: 11px; }
-      /* line 188, ../sass/modules/_posts.scss */
+      /* line 186, ../sass/modules/_posts.scss */
       .post-actions li a .points {
         display: block;
         font-size: 30px;
         line-height: 50px; }
-      /* line 193, ../sass/modules/_posts.scss */
+      /* line 191, ../sass/modules/_posts.scss */
       .post-actions li a .action {
         display: block;
         height: 20px;
@@ -440,7 +432,7 @@ a {
         left: 0px;
         font-size: 13px; }
 
-/* line 207, ../sass/modules/_posts.scss */
+/* line 205, ../sass/modules/_posts.scss */
 .post-message {
   background: white;
   padding: 20px;
@@ -459,7 +451,7 @@ a {
 /* line 11, ../sass/modules/_comments.scss */
 .comment-meta {
   margin-bottom: 5px;
-  color: #b5b0b0; }
+  color: #b3c1c6; }
   /* line 13, ../sass/modules/_comments.scss */
   .comment-meta .comment-username, .comment-meta .comment-time, .comment-meta .comment-permalink {
     display: inline-block;
@@ -471,7 +463,7 @@ a {
     white-space: nowrap;
     overflow: hidden;
     width: 20px;
-    color: #b5b0b0; }
+    color: #b3c1c6; }
     /* line 23, ../sass/modules/_comments.scss */
     .comment-meta .comment-permalink:before {
       position: absolute;

@@ -9,6 +9,7 @@
 // }
 .header{
 	overflow:hidden;
+	background:$highlight-color url("/img/bg-header.png") top center;
 	background-color:$highlight-color;
 	margin-bottom:$grid-margin;
 	height:$grid-unit;
@@ -61,5 +62,11 @@
 			display:block;
 			padding:0px 10px;
 		}
+	}
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5){
+	.header{
+		// background-image:url("/img/bg-header@2x.png");
+		// background-size: 10px 10px;
 	}
 }

@@ -36,7 +36,7 @@ mixin post(post)
 						span.unit points 
 					| by 
 					a.post-author(href='#') #{post.submitter} 
-					span.post-time #{moment(post.submitted).fromNow()} 
+					span.post-time #{moment(post.submitted).fromNow()}
 					span.comments
 						|, 
 						a(href='/posts/#{post._id}') #{post.comments} comments
