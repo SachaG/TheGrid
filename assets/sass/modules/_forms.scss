@@ -1,5 +1,5 @@
 form{
-	@include block;
+	@extend .grid-block;
 	.control-group{
 		margin-bottom:$grid-padding;
 		label{

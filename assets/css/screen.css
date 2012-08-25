@@ -58,6 +58,15 @@ a img {
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block; }
 
+/* line 10, ../sass/partials/_mixins.scss */
+.grid-block, .post-content, .post-actions li a, .comment-content, .comment-new, form {
+  background: #fff;
+  padding: 15px;
+  margin-bottom: 10px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15); }
+
 /* line 1, ../sass/partials/_main.scss */
 body {
   background: #efefef url("/img/bg.png") top center;
@@ -152,12 +161,12 @@ a {
 .icon-menu:before {
   content: "\2630"; }
 
-/* line 7, ../sass/partials/_grid.scss */
+/* line 5, ../sass/partials/_grid.scss */
 .grid {
   width: 74%;
   margin: 0 13%; }
 
-/* line 11, ../sass/partials/_grid.scss */
+/* line 9, ../sass/partials/_grid.scss */
 .grid-small {
   width: 320px;
   margin: 0 auto; }
@@ -172,11 +181,11 @@ a {
   /* For modern browsers */
   /* For IE 6/7 (trigger hasLayout) */
   *zoom: 1; }
-  /* line 50, ../sass/partials/_mixins.scss */
+  /* line 52, ../sass/partials/_mixins.scss */
   .header:before, .header:after {
     content: "";
     display: table; }
-  /* line 54, ../sass/partials/_mixins.scss */
+  /* line 56, ../sass/partials/_mixins.scss */
   .header:after {
     clear: both; }
   /* line 17, ../sass/modules/_header.scss */
@@ -252,23 +261,17 @@ a {
   /* For modern browsers */
   /* For IE 6/7 (trigger hasLayout) */
   *zoom: 1; }
-  /* line 50, ../sass/partials/_mixins.scss */
+  /* line 52, ../sass/partials/_mixins.scss */
   .post:before, .post:after {
     content: "";
     display: table; }
-  /* line 54, ../sass/partials/_mixins.scss */
+  /* line 56, ../sass/partials/_mixins.scss */
   .post:after {
     clear: both; }
 
 /* line 6, ../sass/modules/_posts.scss */
 .post-content {
   position: relative;
-  background: #fff;
-  padding: 15px;
-  margin-bottom: 10px;
-  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
   padding: 0;
   min-height: 40px;
   margin-right: 160px; }
@@ -380,12 +383,6 @@ a {
     margin-left: 10px; }
     /* line 108, ../sass/modules/_posts.scss */
     .post-actions li a {
-      background: #fff;
-      padding: 15px;
-      margin-bottom: 10px;
-      -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-      -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
       position: relative;
       display: block;
       padding: 0;
@@ -449,12 +446,6 @@ a {
 /* line 6, ../sass/modules/_comments.scss */
 .comment-content {
   position: relative;
-  background: #fff;
-  padding: 15px;
-  margin-bottom: 10px;
-  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
   font-size: 14px; }
 
 /* line 11, ../sass/modules/_comments.scss */
@@ -520,89 +511,72 @@ a {
       .comment-actions a:hover:before {
         color: white; }
 
-/* line 68, ../sass/modules/_comments.scss */
-.comment-new {
-  background: #fff;
-  padding: 15px;
-  margin-bottom: 10px;
-  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15); }
-
-/* line 1, ../sass/modules/_forms.scss */
-form {
-  background: #fff;
-  padding: 15px;
-  margin-bottom: 10px;
-  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15); }
-  /* line 3, ../sass/modules/_forms.scss */
-  form .control-group {
-    margin-bottom: 15px; }
-    /* line 5, ../sass/modules/_forms.scss */
-    form .control-group label {
-      float: left; }
-    /* line 8, ../sass/modules/_forms.scss */
-    form .control-group .controls {
-      margin-left: 100px; }
-  /* line 12, ../sass/modules/_forms.scss */
-  form .form-actions {
-    /* For modern browsers */
-    /* For IE 6/7 (trigger hasLayout) */
-    *zoom: 1; }
-    /* line 50, ../sass/partials/_mixins.scss */
-    form .form-actions:before, form .form-actions:after {
-      content: "";
-      display: table; }
-    /* line 54, ../sass/partials/_mixins.scss */
-    form .form-actions:after {
-      clear: both; }
-  /* line 15, ../sass/modules/_forms.scss */
-  form input[type="text"], form input[type="password"], form textarea {
-    display: block;
-    padding: 5px 6px;
-    width: 100%;
-    font-size: 14px;
-    -webkit-box-sizing: border-box;
-    /* Safari/Chrome, other WebKit */
-    -moz-box-sizing: border-box;
-    /* Firefox, other Gecko */
-    box-sizing: border-box;
-    /* Opera/IE 8+ */
-    border: none;
-    -webkit-transition: all, 500ms;
-    -moz-transition: all, 500ms;
-    -o-transition: all, 500ms;
-    transition: all, 500ms;
-    -webkit-box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.2);
-    box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.2); }
-    /* line 24, ../sass/modules/_forms.scss */
-    form input[type="text"]:focus, form input[type="password"]:focus, form textarea:focus {
-      outline: none;
-      -webkit-box-shadow: inset 0px 0px 0px 1px rgba(246, 67, 26, 0.5), 0px 0px 5px 0px rgba(246, 67, 26, 0.2);
-      -moz-box-shadow: inset 0px 0px 0px 1px rgba(246, 67, 26, 0.5), 0px 0px 5px 0px rgba(246, 67, 26, 0.2);
-      box-shadow: inset 0px 0px 0px 1px rgba(246, 67, 26, 0.5), 0px 0px 5px 0px rgba(246, 67, 26, 0.2); }
-  /* line 29, ../sass/modules/_forms.scss */
-  form input[type="text"], form input[type="password"] {
-    height: 30px;
-    line-height: 20px; }
-  /* line 33, ../sass/modules/_forms.scss */
-  form textarea {
-    min-height: 100px;
-    line-height: 1.4; }
-  /* line 37, ../sass/modules/_forms.scss */
-  form input[type="submit"], form button, form .button, form .btn {
-    background: #f6431a;
-    color: white;
-    display: block;
-    padding: 0px 10px;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-    margin: 0;
-    float: right; }
+/* line 3, ../sass/modules/_forms.scss */
+form .control-group {
+  margin-bottom: 15px; }
+  /* line 5, ../sass/modules/_forms.scss */
+  form .control-group label {
+    float: left; }
+  /* line 8, ../sass/modules/_forms.scss */
+  form .control-group .controls {
+    margin-left: 100px; }
+/* line 12, ../sass/modules/_forms.scss */
+form .form-actions {
+  /* For modern browsers */
+  /* For IE 6/7 (trigger hasLayout) */
+  *zoom: 1; }
+  /* line 52, ../sass/partials/_mixins.scss */
+  form .form-actions:before, form .form-actions:after {
+    content: "";
+    display: table; }
+  /* line 56, ../sass/partials/_mixins.scss */
+  form .form-actions:after {
+    clear: both; }
+/* line 15, ../sass/modules/_forms.scss */
+form input[type="text"], form input[type="password"], form textarea {
+  display: block;
+  padding: 5px 6px;
+  width: 100%;
+  font-size: 14px;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+  border: none;
+  -webkit-transition: all, 500ms;
+  -moz-transition: all, 500ms;
+  -o-transition: all, 500ms;
+  transition: all, 500ms;
+  -webkit-box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.2); }
+  /* line 24, ../sass/modules/_forms.scss */
+  form input[type="text"]:focus, form input[type="password"]:focus, form textarea:focus {
+    outline: none;
+    -webkit-box-shadow: inset 0px 0px 0px 1px rgba(246, 67, 26, 0.5), 0px 0px 5px 0px rgba(246, 67, 26, 0.2);
+    -moz-box-shadow: inset 0px 0px 0px 1px rgba(246, 67, 26, 0.5), 0px 0px 5px 0px rgba(246, 67, 26, 0.2);
+    box-shadow: inset 0px 0px 0px 1px rgba(246, 67, 26, 0.5), 0px 0px 5px 0px rgba(246, 67, 26, 0.2); }
+/* line 29, ../sass/modules/_forms.scss */
+form input[type="text"], form input[type="password"] {
+  height: 30px;
+  line-height: 20px; }
+/* line 33, ../sass/modules/_forms.scss */
+form textarea {
+  min-height: 100px;
+  line-height: 1.4; }
+/* line 37, ../sass/modules/_forms.scss */
+form input[type="submit"], form button, form .button, form .btn {
+  background: #f6431a;
+  color: white;
+  display: block;
+  padding: 0px 10px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 0;
+  float: right; }
 
 /* line 2, ../sass/modules/_dialogs.scss */
 .dialog h2 {
@@ -682,7 +656,7 @@ form {
     /* line 63, ../sass/partials/_mobile.scss */
     .post .post-content .post-info {
       margin-left: 30px;
-      padding: 6px 4px 6px 10px; }
+      padding: 6px 4px 6px 8px; }
     /* line 67, ../sass/partials/_mobile.scss */
     .post .post-content .post-heading {
       line-height: 1.4; }
@@ -702,15 +676,22 @@ form {
       /* line 82, ../sass/partials/_mobile.scss */
       .post .post-content .post-meta .comments {
         display: none; }
-  /* line 88, ../sass/partials/_mobile.scss */
+      /* line 85, ../sass/partials/_mobile.scss */
+      .post .post-content .post-meta .unit {
+        font-size: 0; }
+        /* line 87, ../sass/partials/_mobile.scss */
+        .post .post-content .post-meta .unit:after {
+          font-size: 12px;
+          content: "pts "; }
+  /* line 95, ../sass/partials/_mobile.scss */
   .post .post-actions li {
     float: none; }
-    /* line 90, ../sass/partials/_mobile.scss */
+    /* line 97, ../sass/partials/_mobile.scss */
     .post .post-actions li a {
       height: 40px;
       width: 40px;
       font-size: 30px; }
-      /* line 94, ../sass/partials/_mobile.scss */
+      /* line 101, ../sass/partials/_mobile.scss */
       .post .post-actions li a i {
         display: block;
         position: absolute;
@@ -720,9 +701,9 @@ form {
         height: 100%;
         line-height: 44px;
         text-align: center; }
-      /* line 104, ../sass/partials/_mobile.scss */
+      /* line 111, ../sass/partials/_mobile.scss */
       .post .post-actions li a .count {
         top: 9px; }
-      /* line 107, ../sass/partials/_mobile.scss */
+      /* line 114, ../sass/partials/_mobile.scss */
       .post .post-actions li a .action {
         display: none; } }

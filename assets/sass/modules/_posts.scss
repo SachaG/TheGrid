@@ -5,7 +5,7 @@
 }
 .post-content{
 	position:relative;
-	@include block;
+	@extend .grid-block;
 	padding:0;
 	min-height:$grid-unit - 30px;
 	// margin-right:240px;
@@ -106,7 +106,7 @@
 		float:left;
 		margin-left:$grid-margin;
 		a{
-			@include block;
+			@extend .grid-block;
 			position:relative;
 			display:block;
 			padding:0;

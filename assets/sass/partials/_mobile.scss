@@ -62,7 +62,7 @@
 			}
 			.post-info{
 				margin-left:30px;
-				padding:6px 4px 6px 10px;
+				padding:6px 4px 6px 8px;
 			}
 			.post-heading{
 				line-height:1.4;
@@ -81,6 +81,13 @@
 				font-size:12px;
 				.comments{
 					display:none;
+				}
+				.unit{
+					font-size:0;
+					&:after{
+						font-size:12px;
+						content:"pts ";
+					}
 				}
 			}
 		}
