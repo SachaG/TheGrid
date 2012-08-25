@@ -11,23 +11,9 @@ mixin post(post)
 					span.count #{post.comments}
 					span.action Discuss
 			li.post-more.mobile
-				a.text-link
+				a.more-link
 					i.icon-share
 					span.action Text    
-			//    
-				if loggedIn
-					li.post-upvote
-						a.upvote-link(href='/posts/#{post._id}/upvote', class=(post.voted ? 'voted' : null))
-							span.points #{post.votes}
-							if post.voted
-								span.action Upvoted
-							else
-								span.action Upvote
-				else
-					li.post-upvote
-						a.upvote-link(href='/login')
-							span.points #{post.votes}
-							span.action Upvote
 		.post-content
 			span.post-rank 1
 			.post-upvote
