@@ -12,10 +12,32 @@ html(lang="en")
       !=css('screen.css')
     block scripts_header
   body
+    #menu.hidden
+      ul
+        li
+          a(href='/') Top
+        li
+          a(href='/') New
+        li
+          a(href='/') Ask
+        li
+          a(href='/') Show
+        li
+          a(href='/') Jobs  
+        if loggedIn  
+          li
+            a(href='/') Account
+        else
+          li
+            a(href='/') Sign Up    
+          li
+            a(href='/') Log In        
+        li
+          a(href='/') Submit                             
     header.header.grid
       h1.logo
         a(href='/') The Grid
-      a.mobile.mobile-button.menu(href='#')
+      a#mobile-menu.mobile.mobile-button.menu(href='#menu')
         i.icon-menu
         span Menu
       a.mobile.mobile-button.submit(href='/submit')
@@ -44,7 +66,7 @@ html(lang="en")
          li: a(href='/jobs') Jobs
       ul.nav.user-nav.desktop
        if loggedIn
-         li: a(href='/logout') Log Out
+         li: a(href='/account') Account
        else
          li: a(href='/signup') Sign Up
          li: a(href='/login') Log In
