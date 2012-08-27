@@ -6,8 +6,12 @@ mixin comment(comment, post)
   li.comment
     .comment-content
       .comment-actions
-        a.upvote.icon-up upvote
-        a.downvote.icon-down downvote
+        a.upvote
+          i.icon-up
+          span upvote
+        a.downvote
+          i.icon-down 
+          span downvote
       .comment-meta
         a.comment-username #{comment.item.submitter}
         span.comment-time #{moment(comment.item.submitted).fromNow()}
