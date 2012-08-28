@@ -36,9 +36,11 @@
 			display:table;
 			float:left;
 			width:30px;
-			@include background(linear-gradient(#f3f6f8, #dfe3e5));
-			background:$light-blue;
+			// @include background(linear-gradient(#f3f6f8, #dfe3e5));
+			@include border-radius(3px 0 0 3px);
+			// background:$light-blue;
 			// @include box-shadow(inset 0 1px 0 white, inset -1px 0 1px black(0.1));
+			border-right:1px solid $lightest-grey;
 			i{
 				font-size:12px;
 				display:table-cell;
@@ -48,6 +50,7 @@
 				// line-height:$grid-unit;
 				vertical-align:middle;
 				color:$light-blue2;
+				color:$red;
 				text-shadow:0px 1px 0px white;
 				&.icon-check{
 					display:none;
@@ -70,7 +73,7 @@
 					display:none;
 				}
 				i.icon-check{
-					color:$red;
+					color:$blue;
 					display:table-cell;
 				}
 			}
@@ -220,8 +223,8 @@
 	left:-223px;
 	top:5px;
 	background:white;
-	border:2px solid $red;
-	// @include border-radius(3px);
+	border:1px solid $red;
+	@include border-radius(3px);
 	@include box-shadow(0px 1px 2px black(0.25));
 	z-index:100;
 	@include transition(all, 300ms);	
@@ -250,9 +253,9 @@
 	&:before {
 		border-color: rgba(0, 0, 0, 0);
 		border-left-color: $red;
-		border-width: 12px;
+		border-width: 11px;
 		top: 20px;
-		margin-top: -12px;
+		margin-top: -11px;
 	}
 	.buttons{
 		@include cf;
@@ -260,6 +263,8 @@
 		.button{
 			float:left;
 			margin-right:10px;
+			background:transparent;
+			padding:0px;
 		}
 	}
 

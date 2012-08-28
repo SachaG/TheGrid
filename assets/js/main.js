@@ -27,22 +27,23 @@ $(function(){
     iframe: false
   });
   
-  $('.share-replace').sharrre({
-    share: {
-      googlePlus: true,
-      facebook: true,
-      twitter: true,
-    },
-    buttons: {
-      googlePlus: {size: 'tall'},
-      facebook: {layout: 'box_count'},
-      twitter: {count: 'vertical'},
-    },
-    enableHover: false,
-    enableCounter: false,
-    enableTracking: true
-  });
-
+  if($(window).width()>400){ //do not load social media plugin on mobile
+    $('.share-replace').sharrre({
+      share: {
+        googlePlus: true,
+        facebook: true,
+        twitter: true,
+      },
+      buttons: {
+        googlePlus: {size: 'tall'},
+        facebook: {layout: 'box_count'},
+        twitter: {count: 'vertical'},
+      },
+      enableHover: false,
+      enableCounter: false,
+      enableTracking: true
+    });
+  }
 
   $('.upvote-link').click(function(event){
     var $target = $(event.currentTarget);
