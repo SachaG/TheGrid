@@ -7,8 +7,6 @@ html(lang="en")
     meta(name='description', content='')
     meta(name='author', content='')
     block styles
-      link(href='http://fonts.googleapis.com/css?family=Rokkitt:400,700', rel='stylesheet', type='text/css')
-      link(href='http://fonts.googleapis.com/css?family=PT+Sans:400,700', rel='stylesheet', type='text/css')
       !=css('screen.css')
     block scripts_header
   body
@@ -31,9 +29,7 @@ html(lang="en")
           li
             a(href='/') Sign Up    
           li
-            a(href='/') Log In        
-        li
-          a(href='/') Submit                             
+            a(href='/') Log In
     header.header.grid
       h1.logo
         a(href='/') The Grid
@@ -72,5 +68,6 @@ html(lang="en")
          li: a(href='/login') Log In
        li: a.submit(href='/submit') Submit
     block content
+    .overlay.hidden
     block scripts_footer
       !=js('main')

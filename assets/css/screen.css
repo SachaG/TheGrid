@@ -90,9 +90,18 @@ body {
 .hidden {
   display: none; }
 
+/* line 23, ../sass/partials/_main.scss */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 50; }
+
 /* line 1, ../sass/partials/_typography.scss */
 body, textarea, input, button, input[type="submit"], input[type="button"] {
-  font-family: "Proxima Nova Soft", proxima-nova-soft, "PT SANS", Helvetica, sans-serif;
+  font-family: "Proxima Nova Soft", "proxima-nova-soft", "PT SANS", "Helvetica Neue", Helvetica, sans-serif;
   color: #4a4444;
   line-height: 1.6; }
 
@@ -169,7 +178,7 @@ a {
   height: 100%;
   z-index: 999999;
   /* Specify the width of your pageslide here */
-  width: 280px;
+  width: 260px;
   /* These styles are optional, and describe how the pageslide will look */
   background-color: #333;
   color: #FFF;
@@ -199,6 +208,18 @@ a {
       #menu ul li a:hover {
         background: rgba(0, 0, 0, 0.5);
         color: white; }
+
+/* line 44, ../sass/partials/_pageslide.scss */
+body.pageslide-open {
+  overflow: hidden; }
+
+/* line 47, ../sass/partials/_pageslide.scss */
+.wrapper {
+  position: absolute;
+  top: 0;
+  margin: 0;
+  width: 100%;
+  background: #e9f3f7; }
 
 /* line 5, ../sass/partials/_grid.scss */
 .grid {
@@ -376,7 +397,7 @@ a {
         -webkit-box-shadow: none;
         -moz-box-shadow: none;
         box-shadow: none;
-        background: #4e555d; }
+        background: #4e555d url("/img/bg-header.png") top center; }
         /* line 62, ../sass/modules/_posts.scss */
         .post-content .post-upvote .upvote-link.not-voted:hover i {
           color: white;
@@ -419,9 +440,10 @@ a {
   padding: 0; }
   /* line 104, ../sass/modules/_posts.scss */
   .post-actions li {
+    position: relative;
     float: left;
     margin-left: 10px; }
-    /* line 107, ../sass/modules/_posts.scss */
+    /* line 108, ../sass/modules/_posts.scss */
     .post-actions li a {
       background: #d8e9f5;
       background: white;
@@ -436,29 +458,29 @@ a {
       color: #b3c1c6;
       font-size: 36px;
       line-height: 50px; }
-      /* line 158, ../sass/modules/_posts.scss */
+      /* line 159, ../sass/modules/_posts.scss */
       .post-actions li a.share-link {
         color: #7ac0e4;
         color: #f8e121; }
-      /* line 162, ../sass/modules/_posts.scss */
+      /* line 163, ../sass/modules/_posts.scss */
       .post-actions li a.discuss-link {
         color: #a3d06d; }
-      /* line 165, ../sass/modules/_posts.scss */
+      /* line 166, ../sass/modules/_posts.scss */
       .post-actions li a.more-link {
         color: #7ac0e4; }
-      /* line 168, ../sass/modules/_posts.scss */
+      /* line 169, ../sass/modules/_posts.scss */
       .post-actions li a:hover {
-        background: #4e555d;
+        background: #4e555d url("/img/bg-header.png") top center;
         color: white; }
-      /* line 172, ../sass/modules/_posts.scss */
+      /* line 173, ../sass/modules/_posts.scss */
       .post-actions li a.voted {
         background: #4e555d;
         color: white;
         cursor: default; }
-        /* line 176, ../sass/modules/_posts.scss */
+        /* line 177, ../sass/modules/_posts.scss */
         .post-actions li a.voted .action {
           color: #fff; }
-      /* line 180, ../sass/modules/_posts.scss */
+      /* line 181, ../sass/modules/_posts.scss */
       .post-actions li a .count {
         position: absolute;
         top: 12px;
@@ -467,12 +489,12 @@ a {
         height: 20px;
         line-height: 20px;
         font-size: 11px; }
-      /* line 189, ../sass/modules/_posts.scss */
+      /* line 190, ../sass/modules/_posts.scss */
       .post-actions li a .points {
         display: block;
         font-size: 30px;
         line-height: 50px; }
-      /* line 194, ../sass/modules/_posts.scss */
+      /* line 195, ../sass/modules/_posts.scss */
       .post-actions li a .action {
         display: block;
         height: 20px;
@@ -484,12 +506,74 @@ a {
         font-size: 13px;
         color: #b3c1c6; }
 
-/* line 209, ../sass/modules/_posts.scss */
+/* line 210, ../sass/modules/_posts.scss */
 .post-message {
   background: white;
   padding: 20px;
   margin-bottom: 10px;
   font-size: 18px; }
+
+/* line 216, ../sass/modules/_posts.scss */
+.share-options {
+  position: absolute;
+  left: -223px;
+  top: 5px;
+  background: white;
+  border: 2px solid #f36c3d;
+  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+  z-index: 100;
+  -webkit-transition: all, 300ms;
+  -moz-transition: all, 300ms;
+  -o-transition: all, 300ms;
+  transition: all, 300ms; }
+  /* line 228, ../sass/modules/_posts.scss */
+  .share-options.hidden {
+    display: block;
+    opacity: 0;
+    pointer-events: none;
+    left: -210px; }
+  /* line 234, ../sass/modules/_posts.scss */
+  .share-options:after, .share-options:before {
+    left: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none; }
+  /* line 243, ../sass/modules/_posts.scss */
+  .share-options:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-left-color: #ffffff;
+    border-width: 10px;
+    top: 20px;
+    margin-top: -10px; }
+  /* line 250, ../sass/modules/_posts.scss */
+  .share-options:before {
+    border-color: rgba(0, 0, 0, 0);
+    border-left-color: #f36c3d;
+    border-width: 12px;
+    top: 20px;
+    margin-top: -12px; }
+  /* line 257, ../sass/modules/_posts.scss */
+  .share-options .buttons {
+    /* For modern browsers */
+    /* For IE 6/7 (trigger hasLayout) */
+    *zoom: 1;
+    padding: 15px 5px 5px 15px; }
+    /* line 52, ../sass/partials/_mixins.scss */
+    .share-options .buttons:before, .share-options .buttons:after {
+      content: "";
+      display: table; }
+    /* line 56, ../sass/partials/_mixins.scss */
+    .share-options .buttons:after {
+      clear: both; }
+    /* line 260, ../sass/modules/_posts.scss */
+    .share-options .buttons .button {
+      float: left;
+      margin-right: 10px; }
 
 /* line 1, ../sass/modules/_comments.scss */
 .comment {
@@ -600,30 +684,34 @@ form input[type="text"], form input[type="password"], form textarea {
   /* Firefox, other Gecko */
   box-sizing: border-box;
   /* Opera/IE 8+ */
-  border: none;
+  border: 1px solid #b5b0b0;
   -webkit-transition: all, 500ms;
   -moz-transition: all, 500ms;
   -o-transition: all, 500ms;
-  transition: all, 500ms;
-  -webkit-box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.2); }
+  transition: all, 500ms; }
   /* line 24, ../sass/modules/_forms.scss */
   form input[type="text"]:focus, form input[type="password"]:focus, form textarea:focus {
     outline: none;
-    -webkit-box-shadow: inset 0px 0px 0px 1px rgba(243, 108, 61, 0.5), 0px 0px 5px 0px rgba(243, 108, 61, 0.2);
-    -moz-box-shadow: inset 0px 0px 0px 1px rgba(243, 108, 61, 0.5), 0px 0px 5px 0px rgba(243, 108, 61, 0.2);
-    box-shadow: inset 0px 0px 0px 1px rgba(243, 108, 61, 0.5), 0px 0px 5px 0px rgba(243, 108, 61, 0.2); }
-/* line 29, ../sass/modules/_forms.scss */
+    border-color: #f36c3d;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(243, 108, 61, 0.3);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(243, 108, 61, 0.3);
+    box-shadow: 0px 0px 5px 0px rgba(243, 108, 61, 0.3); }
+/* line 30, ../sass/modules/_forms.scss */
 form input[type="text"], form input[type="password"] {
   height: 30px;
   line-height: 20px; }
-/* line 33, ../sass/modules/_forms.scss */
+/* line 34, ../sass/modules/_forms.scss */
 form textarea {
   min-height: 100px;
   line-height: 1.4; }
-/* line 37, ../sass/modules/_forms.scss */
+/* line 38, ../sass/modules/_forms.scss */
 form input[type="submit"], form button, form .button, form .btn {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
   background: #f36c3d;
   color: white;
   display: block;
@@ -706,60 +794,61 @@ form input[type="submit"], form button, form .button, form .btn {
   /* line 58, ../sass/partials/_mobile.scss */
   .post .post-content {
     margin-right: 50px;
+    margin-right: 0px;
     min-height: 90px; }
-    /* line 61, ../sass/partials/_mobile.scss */
+    /* line 62, ../sass/partials/_mobile.scss */
     .post .post-content .upvote-link {
       width: 30px; }
-    /* line 64, ../sass/partials/_mobile.scss */
+    /* line 65, ../sass/partials/_mobile.scss */
     .post .post-content .post-info {
       margin-left: 30px;
       padding: 6px 4px 6px 8px; }
-    /* line 69, ../sass/partials/_mobile.scss */
+    /* line 70, ../sass/partials/_mobile.scss */
     .post .post-content .post-heading .post-title {
       line-height: 1.2;
       display: block;
-      margin-bottom: 3px;
+      margin-bottom: 4px;
       font-size: 18px; }
-    /* line 75, ../sass/partials/_mobile.scss */
+    /* line 76, ../sass/partials/_mobile.scss */
     .post .post-content .post-heading .post-domain {
       line-height: 1;
       display: block;
-      margin-bottom: 2px;
+      margin-bottom: 4px;
       font-size: 13px; }
-    /* line 82, ../sass/partials/_mobile.scss */
+    /* line 83, ../sass/partials/_mobile.scss */
     .post .post-content .post-meta {
       font-size: 11px; }
-      /* line 84, ../sass/partials/_mobile.scss */
-      .post .post-content .post-meta .comments {
-        display: none; }
-      /* line 87, ../sass/partials/_mobile.scss */
+      /* line 88, ../sass/partials/_mobile.scss */
       .post .post-content .post-meta .unit {
         font-size: 0; }
-        /* line 89, ../sass/partials/_mobile.scss */
+        /* line 90, ../sass/partials/_mobile.scss */
         .post .post-content .post-meta .unit:after {
           font-size: 12px;
           content: "pts "; }
   /* line 97, ../sass/partials/_mobile.scss */
-  .post .post-actions li {
-    float: none; }
+  .post .post-actions {
+    display: none; }
     /* line 99, ../sass/partials/_mobile.scss */
-    .post .post-actions li a {
-      height: 40px;
-      width: 40px;
-      font-size: 30px; }
-      /* line 103, ../sass/partials/_mobile.scss */
-      .post .post-actions li a i {
-        display: block;
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        width: 100%;
-        height: 100%;
-        line-height: 40px;
-        text-align: center; }
-      /* line 113, ../sass/partials/_mobile.scss */
-      .post .post-actions li a .count {
-        top: 9px; }
-      /* line 116, ../sass/partials/_mobile.scss */
-      .post .post-actions li a .action {
-        display: none; } }
+    .post .post-actions li {
+      float: none; }
+      /* line 101, ../sass/partials/_mobile.scss */
+      .post .post-actions li a {
+        height: 40px;
+        width: 40px;
+        font-size: 30px; }
+        /* line 105, ../sass/partials/_mobile.scss */
+        .post .post-actions li a i {
+          display: block;
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          width: 100%;
+          height: 100%;
+          line-height: 40px;
+          text-align: center; }
+        /* line 115, ../sass/partials/_mobile.scss */
+        .post .post-actions li a .count {
+          top: 9px; }
+        /* line 118, ../sass/partials/_mobile.scss */
+        .post .post-actions li a .action {
+          display: none; } }

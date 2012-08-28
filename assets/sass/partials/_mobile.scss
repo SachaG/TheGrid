@@ -57,6 +57,7 @@
 	.post{
 		.post-content{
 			margin-right:50px;
+			margin-right:0px;
 			min-height:90px;
 			.upvote-link{
 				width:30px;
@@ -69,20 +70,20 @@
 				.post-title{
 					line-height:1.2;
 					display:block;
-					margin-bottom:3px;
+					margin-bottom:4px;
 					font-size:18px;
 				}
 				.post-domain{
 					line-height:1;
 					display:block;
-					margin-bottom:2px;
+					margin-bottom:4px;
 					font-size:13px;
 				}	
 			}
 			.post-meta{
 				font-size:11px;
 				.comments{
-					display:none;
+					// display:none;
 				}
 				.unit{
 					font-size:0;
@@ -94,6 +95,7 @@
 			}
 		}
 		.post-actions{
+			display:none;
 			li{
 				float:none;
 				a{

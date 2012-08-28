@@ -2,9 +2,11 @@ mixin post(post)
 	.post
 		ul.post-actions
 			li.post-share.desktop
-				a.share-link
+				a.share-link(href="#")
 					i.icon-share
 					span.action Share
+				.share-options.hidden
+					.share-replace(data-url=post.url, data-text=post.headline)	
 			li.post-discuss
 				a.discuss-link(href='/posts/#{post._id}')
 					i.icon-comment

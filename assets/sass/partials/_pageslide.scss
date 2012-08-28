@@ -8,7 +8,7 @@
     z-index: 999999;
     
     /* Specify the width of your pageslide here */
-    width: 280px;
+    width: 260px;
     // padding: 0 20px;
     
     /* These styles are optional, and describe how the pageslide will look */
@@ -40,4 +40,14 @@
             }
         }
     }
+}
+body.pageslide-open{
+    overflow:hidden;
+}
+.wrapper{
+    position:absolute;
+    top:0;
+    margin:0;
+    width:100%;
+    background:#e9f3f7; 
 }
